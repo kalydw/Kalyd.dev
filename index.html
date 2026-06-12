@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de desenvolvimento front-end focado em sites modernos, responsivos e orientados a conversão." />
+  <title>Portfólio Front-end | Sites modernos e responsivos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Ir para o início">
+      <span class="brand-mark">K</span>
+      <span>Kalyd.dev</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-menu" aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#processo">Processo</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="evolucao.html">Evolução</a>
+      <a href="#contato">Contato</a>
+      <div class="theme-switcher" aria-label="Alterar tema">
+        <button class="theme-dot theme-dot-current" type="button" data-theme-button="default" aria-label="Tema atual"></button>
+        <button class="theme-dot theme-dot-purple" type="button" data-theme-button="purple" aria-label="Tema roxo"></button>
+        <button class="theme-dot theme-dot-red" type="button" data-theme-button="red" aria-label="Tema vermelho claro"></button>
+      </div>
+      <button class="header-hide-button" type="button" data-header-hide aria-label="Esconder cabeçalho">↑</button>
+    </nav>
+  </header>
+
+  <button class="header-show-button" type="button" data-header-show aria-label="Mostrar cabeçalho">↓</button>
+
+  <main id="inicio">
+    <section class="hero section-shell">
+      <div class="hero-copy anim slide-up">
+        <p class="eyebrow">Desenvolvimento front-end</p>
+        <h1>Crio sites e interfaces web com visual profissional.</h1>
+        <p class="hero-text">Desenvolvo landing pages, portfólios e aplicações responsivas como o FMEDCHOICES, uma plataforma de estudos para estudantes de medicina na Argentina.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projetos">Ver FMEDCHOICES</a>
+          <a class="button button-secondary" href="#contato">Solicitar orçamento</a>
+        </div>
+      </div>
+
+      <div class="hero-panel anim scale-in d1" aria-label="Resumo de experiência">
+        <div class="panel-topline">
+          <span>Disponível para freelas</span>
+          <strong>2026</strong>
+        </div>
+        <div class="preview-card preview-main">
+          <span class="preview-label">Projeto real</span>
+          <strong>FMEDCHOICES</strong>
+          <p>Landing page e dashboard para organizar estudos, escolhas, pomodoro e flashcards.</p>
+        </div>
+        <div class="preview-grid">
+          <div>
+            <strong>+18</strong>
+            <span>telas criadas</span>
+          </div>
+          <div>
+            <strong>100%</strong>
+            <span>responsivo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell intro-strip anim fade">
+      <p>Especializado em transformar ideias de produto em páginas bonitas, rápidas e fáceis de usar.</p>
+      <span></span>
+    </section>
+
+    <section class="section-shell" id="servicos">
+      <div class="section-heading anim slide-up">
+        <p class="eyebrow">O que eu entrego</p>
+        <h2>Serviços para negócios que precisam aparecer melhor online.</h2>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card anim slide-up">
+          <span>01</span>
+          <h3>Landing pages</h3>
+          <p>Páginas focadas em captação, anúncio, lançamento ou venda direta, com estrutura clara e CTA bem posicionado.</p>
+        </article>
+        <article class="service-card anim slide-up d1">
+          <span>02</span>
+          <h3>Sites institucionais</h3>
+          <p>Presença digital para marcas, profissionais e empresas que querem transmitir confiança desde o primeiro acesso.</p>
+        </article>
+        <article class="service-card anim slide-up d2">
+          <span>03</span>
+          <h3>Interfaces responsivas</h3>
+          <p>Layouts que funcionam bem no celular, tablet e desktop, com navegação simples e acabamento visual consistente.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="work-section" id="projetos">
+      <div class="section-shell">
+        <div class="section-heading split anim slide-up">
+          <div>
+          <p class="eyebrow">Projeto em destaque</p>
+          <h2>FMEDCHOICES, uma plataforma feita para estudantes de medicina.</h2>
+          </div>
+          <p>Meu principal projeto até agora: uma experiência completa com landing page, área interna, módulos de estudo e foco em estudantes da Argentina, especialmente da UBA.</p>
+        </div>
+
+        <div class="project-list">
+          <article class="project-card featured-project anim slide-left">
+            <a class="project-visual project-screenshot" href="https://medarena.vercel.app/es-AR" target="_blank" rel="noreferrer" aria-label="Abrir FMEDCHOICES">
+              <img src="https://medarena.vercel.app/_next/image?url=%2Fimages%2Fhero-mockup.png&w=1200&q=85" alt="Mockup do dashboard do FMEDCHOICES" />
+            </a>
+            <div class="project-content">
+              <p class="project-type">Produto digital completo</p>
+              <h3>FMEDCHOICES</h3>
+              <p>Plataforma de estudos criada para estudantes de medicina na Argentina, com foco na UBA. O projeto combina landing page comercial, dashboard do estudante, Choices, Pomodoro, Flashcards, Biblioteca, Ranking, planos e área de login.</p>
+              <div class="project-tags" aria-label="Funcionalidades do projeto">
+                <span>Landing page</span>
+                <span>Dashboard</span>
+                <span>Choices</span>
+                <span>Flashcards</span>
+                <span>Pomodoro</span>
+                <span>Ranking</span>
+              </div>
+              <a href="https://medarena.vercel.app/es-AR" target="_blank" rel="noreferrer">Ver projeto online</a>
+            </div>
+          </article>
+
+          <div class="case-grid">
+            <article class="case-card anim slide-up">
+              <span>Desafio</span>
+              <p>Criar uma plataforma clara para estudantes que precisam centralizar perguntas, materiais, tempo de estudo e progresso.</p>
+            </article>
+            <article class="case-card anim slide-up d1">
+              <span>Solução</span>
+              <p>Uma interface responsiva com landing page, dashboard e módulos de estudo organizados em uma navegação simples.</p>
+            </article>
+            <article class="case-card anim slide-up d2">
+              <span>Resultado</span>
+              <p>Um produto digital com aparência profissional, focado em conversão na página inicial e usabilidade dentro da plataforma.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="resultados">
+      <div class="section-heading anim slide-up">
+        <p class="eyebrow">Resultados do projeto</p>
+        <h2>Números que ajudam a mostrar a dimensão do FMEDCHOICES.</h2>
+      </div>
+
+      <div class="process-grid">
+        <div class="stat anim slide-up">
+          <strong>+500</strong>
+          <span>estudantes cadastrados</span>
+        </div>
+        <div class="stat anim slide-up d1">
+          <strong>+50.000</strong>
+          <span>questões respondidas</span>
+        </div>
+        <div class="stat anim slide-up d2">
+          <strong>+12.000</strong>
+          <span>flashcards criados</span>
+        </div>
+        <div class="stat anim slide-up d3">
+          <strong>+8.000</strong>
+          <span>sessões de estudo</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="funcionalidades">
+      <div class="section-heading anim slide-up">
+        <p class="eyebrow">O que foi desenvolvido</p>
+        <h2>Funcionalidades que mostram o projeto como produto real.</h2>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card anim fade">
+          <span>Choices</span>
+          <p>Perguntas para praticar conteúdos no formato de estudo usado pelos alunos.</p>
+        </article>
+        <article class="feature-card anim fade d1">
+          <span>Pomodoro</span>
+          <p>Controle de foco e tempo para criar sessões de estudo mais consistentes.</p>
+        </article>
+        <article class="feature-card anim fade d2">
+          <span>Flashcards</span>
+          <p>Revisão com repetição espaçada para ajudar na memorização de longo prazo.</p>
+        </article>
+        <article class="feature-card anim fade">
+          <span>Biblioteca</span>
+          <p>Materiais de estudo organizados em um só lugar para reduzir a bagunça.</p>
+        </article>
+        <article class="feature-card anim fade d1">
+          <span>Ranking</span>
+          <p>Gamificação para acompanhar desempenho e incentivar constância.</p>
+        </article>
+        <article class="feature-card anim fade d2">
+          <span>Dashboard</span>
+          <p>Resumo visual de progresso, métricas e atividade recente do estudante.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell" id="processo">
+      <div class="section-heading anim slide-up">
+        <p class="eyebrow">Como funciona</p>
+        <h2>Um processo simples para tirar seu site do papel.</h2>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-step anim fade">
+          <span>01</span>
+          <h3>Briefing</h3>
+          <p>Entendo seu objetivo, público, referências e o que o site precisa resolver.</p>
+        </article>
+        <article class="process-step anim fade d1">
+          <span>02</span>
+          <h3>Design</h3>
+          <p>Crio a estrutura visual com foco em clareza, hierarquia e experiência mobile.</p>
+        </article>
+        <article class="process-step anim fade d2">
+          <span>03</span>
+          <h3>Desenvolvimento</h3>
+          <p>Transformo o layout em uma página rápida, responsiva e pronta para publicação.</p>
+        </article>
+        <article class="process-step anim fade d3">
+          <span>04</span>
+          <h3>Ajustes finais</h3>
+          <p>Refino textos, espaçamentos, links e detalhes para entregar uma página polida.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell proof-section">
+      <div class="quote-card anim scale-in">
+        <p>“O objetivo não é só fazer um site bonito. É construir uma primeira impressão forte o bastante para o cliente confiar e chamar.”</p>
+        <span>Design com intenção, código com cuidado.</span>
+      </div>
+      <div class="stats-grid">
+        <div class="stat anim slide-up">
+          <strong>Mobile first</strong>
+          <span>pensado para quem acessa pelo celular</span>
+        </div>
+        <div class="stat anim slide-up d1">
+          <strong>Performance</strong>
+          <span>sem excesso visual que deixa tudo pesado</span>
+        </div>
+        <div class="stat anim slide-up d2">
+          <strong>Conversão</strong>
+          <span>cada seção conduz para uma ação clara</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell evolution-callout anim slide-up">
+      <div>
+        <p class="eyebrow">Antes e depois</p>
+        <h2>Veja como este portfólio evoluiu.</h2>
+        <p>Uma página exclusiva mostra a primeira versão do site e a versão atual, com troca em tempo real para comparar texto, visual, projetos e acabamento.</p>
+      </div>
+      <a class="button button-primary" href="evolucao.html">Ver evolução</a>
+    </section>
+
+    <section class="contact-section" id="contato">
+      <div class="section-shell contact-wrap anim slide-up">
+        <div>
+          <p class="eyebrow">Vamos conversar</p>
+          <h2>Quer um site com cara profissional para seu negócio?</h2>
+          <p>Me chame com uma ideia, referência ou objetivo. Eu ajudo a transformar isso em uma página bonita, responsiva e pronta para atrair clientes.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button button-primary" href="https://wa.me/557798654680" target="_blank" rel="noreferrer">Chamar no WhatsApp</a>
+          <button class="button button-secondary" type="button" data-modal-open>Enviar e-mail</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Kalyd.dev</span>
+    <p>Portfólio front-end criado com HTML, CSS e JavaScript.</p>
+  </footer>
+
+
+  <div class="modal" data-modal aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+      <button class="modal-close" type="button" data-modal-close aria-label="Fechar formulário">×</button>
+      <div class="modal-heading">
+        <p class="eyebrow">Pedido de orçamento</p>
+        <h2 id="contact-modal-title">Me conte sobre seu projeto.</h2>
+        <p>Preencha os dados e a mensagem chega direto no meu e-mail.</p>
+      </div>
+
+      <form class="contact-form" action="https://formsubmit.co/pedrokalyd13@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Novo pedido pelo portfólio Kalyd.dev" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+
+        <label>
+          <span>Nome</span>
+          <input type="text" name="nome" placeholder="Seu nome" required />
+        </label>
+
+        <label>
+          <span>E-mail</span>
+          <input type="email" name="email" placeholder="seuemail@exemplo.com" required />
+        </label>
+
+        <label>
+          <span>WhatsApp</span>
+          <input type="tel" name="whatsapp" placeholder="77999999999" />
+        </label>
+
+        <label>
+          <span>Projeto</span>
+          <textarea name="mensagem" rows="5" placeholder="Me conte o que você precisa" required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button class="button button-primary" type="submit">Enviar pedido</button>
+          <button class="button button-secondary" type="button" data-modal-close>Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,12 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Espada com simbolo de codigo</title>
+  <desc id="desc">Simbolo inspirado na imagem anexada, unindo desenvolvimento, tecnologia e RPG.</desc>
+  <path d="M512 176L548 212L524 248V388L642 432L610 492L544 468V532L628 584L594 632L544 600V760L512 848L480 760V600L430 632L396 584L480 532V468L414 492L382 432L500 388V248L476 212L512 176Z" stroke="currentColor" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M512 204L528 220L512 238L496 220L512 204Z" stroke="currentColor" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M512 292V384" stroke="currentColor" stroke-width="14" stroke-linecap="round"/>
+  <path d="M448 548L348 492L448 430" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M576 548L676 492L576 430" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M534 454L492 542" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>
+  <path d="M496 474L474 492L496 510" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M528 474L550 492L528 510" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

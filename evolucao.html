@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Evolução visual do portfólio Kalyd.dev em três versões interativas." />
+  <title>Evolução do Portfólio | Kalyd.dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="evolucao.css" />
+</head>
+<body data-stage="basic">
+  <section class="story-intro">
+    <div class="intro-nav">
+      <a class="brand" href="index.html" aria-label="Voltar para o portfólio">
+        <span>K</span>
+        Kalyd.dev
+      </a>
+      <a href="index.html">Voltar ao portfólio</a>
+    </div>
+
+    <div class="intro-copy">
+      <p>Evolução do portfólio</p>
+      <h1>Primeiro ele era simples. Depois ganhou movimento. Agora virou uma experiência completa.</h1>
+      <span>Desça um pouco e troque as versões. A página inteira muda junto; não é uma imagem nem uma janelinha.</span>
+    </div>
+  </section>
+
+  <div class="stage-controls" aria-label="Escolher versão da página">
+    <div class="stage-tabs">
+      <button class="stage-button active" type="button" data-stage-button="basic">1. Básico</button>
+      <button class="stage-button" type="button" data-stage-button="animated">2. Animado</button>
+      <button class="stage-button" type="button" data-stage-button="final">3. Final</button>
+    </div>
+    <div class="theme-switcher" aria-label="Alterar tema">
+      <button class="theme-dot theme-dot-current" type="button" data-theme-button="default" aria-label="Tema atual"></button>
+      <button class="theme-dot theme-dot-purple" type="button" data-theme-button="purple" aria-label="Tema roxo"></button>
+      <button class="theme-dot theme-dot-red" type="button" data-theme-button="red" aria-label="Tema vermelho claro"></button>
+    </div>
+  </div>
+
+  <main class="evolving-page" aria-live="polite">
+    <header class="demo-header">
+      <a class="demo-brand" href="#inicio">
+        <span data-copy="brand-mark">K</span>
+        <strong data-copy="brand">Kalyd.dev</strong>
+      </a>
+
+      <nav class="demo-nav" aria-label="Navegação da versão">
+        <a href="#servicos">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#processo">Processo</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <section class="demo-hero final-reveal" id="inicio">
+      <div class="demo-copy">
+        <p class="eyebrow" data-copy="eyebrow">Desenvolvimento front-end</p>
+        <h2 data-copy="hero-title">Sites modernos que ajudam marcas a vender melhor.</h2>
+        <p data-copy="hero-text">Crio landing pages, portfólios e interfaces responsivas com visual profissional, boa performance e foco em transformar visitantes em clientes.</p>
+        <ul class="basic-list stage-piece basic-piece">
+          <li>Página simples com texto direto.</li>
+          <li>Sem estudo de caso real.</li>
+          <li>Sem temas, flow ou microinterações.</li>
+        </ul>
+        <div class="demo-actions">
+          <a href="#contato" data-copy="primary-action">Solicitar orçamento</a>
+          <a href="#projetos" data-copy="secondary-action">Ver projetos</a>
+        </div>
+      </div>
+
+      <aside class="demo-panel">
+        <div class="panel-line">
+          <span data-copy="panel-status">Disponível para freelas</span>
+          <strong>2026</strong>
+        </div>
+        <div class="panel-card">
+          <span data-copy="panel-label">Landing page</span>
+          <strong data-copy="panel-title">Clareza, velocidade e conversão</strong>
+          <p data-copy="panel-text">Design responsivo com CTA forte, seções objetivas e animações sutis.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="stage-piece animated-piece motion-lab">
+      <span>Experimento visual</span>
+      <div class="motion-row">
+        <strong>hover</strong>
+        <strong>glow</strong>
+        <strong>motion</strong>
+        <strong>cards</strong>
+      </div>
+      <p>Essa fase tem energia, mas ainda parece teste: muito efeito, pouca estratégia.</p>
+    </section>
+
+    <section class="demo-strip final-reveal">
+      <p data-copy="strip">Especializado em transformar ideias simples em páginas bonitas, rápidas e fáceis de entender.</p>
+    </section>
+
+    <section class="demo-section final-reveal" id="servicos">
+      <div class="section-heading">
+        <p class="eyebrow">O que eu entrego</p>
+        <h2 data-copy="services-title">Serviços para negócios que precisam aparecer melhor online.</h2>
+      </div>
+
+      <div class="demo-grid services-grid">
+        <article>
+          <span>01</span>
+          <h3>Landing pages</h3>
+          <p>Páginas focadas em captação, anúncio, lançamento ou venda direta.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Sites institucionais</h3>
+          <p>Presença digital para marcas, profissionais e empresas.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Interfaces responsivas</h3>
+          <p>Layouts que funcionam bem no celular, tablet e desktop.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="demo-section demo-work final-reveal" id="projetos">
+      <div class="section-heading split">
+        <div>
+          <p class="eyebrow" data-copy="project-kicker">Projetos selecionados</p>
+          <h2 data-copy="project-title">Exemplos de páginas pensadas para impressionar e converter.</h2>
+        </div>
+        <p data-copy="project-intro">Use estes cards como base para trocar por projetos reais, screenshots e links quando quiser.</p>
+      </div>
+
+      <div class="project-showcase">
+        <article class="main-project">
+          <div class="project-visual">
+            <img data-copy-src="project-image" src="" alt="" />
+          </div>
+          <div>
+            <p class="project-type" data-copy="project-type">Landing page comercial</p>
+            <h3 data-copy="project-name">Studio Prime</h3>
+            <p data-copy="project-description">Uma página para serviço premium, com hero direto, prova social e CTA visível para orçamento.</p>
+            <div class="project-tags">
+              <span data-copy="tag-one">Hero</span>
+              <span data-copy="tag-two">CTA</span>
+              <span data-copy="tag-three">Responsivo</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="stage-piece final-piece case-row">
+        <article>
+          <span>Desafio</span>
+          <p>Centralizar estudo, progresso e materiais para estudantes de medicina.</p>
+        </article>
+        <article>
+          <span>Solução</span>
+          <p>Landing page, dashboard e módulos como Choices, Pomodoro e Flashcards.</p>
+        </article>
+        <article>
+          <span>Resultado</span>
+          <p>Um projeto real em destaque, mais forte que cards fictícios.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="stage-piece final-piece final-carousel final-reveal" aria-label="Destaques da versão final">
+      <div class="carousel-heading">
+        <p class="eyebrow">Destaques finais</p>
+        <h2>Uma versão com mais acabamento, contexto e movimento.</h2>
+      </div>
+      <div class="carousel-shell">
+        <button class="carousel-button" type="button" data-carousel-prev aria-label="Slide anterior">‹</button>
+        <div class="carousel-track" data-carousel-track>
+          <article class="carousel-slide active">
+            <span>01</span>
+            <strong>Projeto real</strong>
+            <p>O FMEDCHOICES substitui os exemplos fictícios e deixa o portfólio mais honesto.</p>
+          </article>
+          <article class="carousel-slide">
+            <span>02</span>
+            <strong>Identidade visual</strong>
+            <p>Temas, flow, contraste e componentes mais consistentes deixam a página memorável.</p>
+          </article>
+          <article class="carousel-slide">
+            <span>03</span>
+            <strong>Experiência</strong>
+            <p>Animações de entrada, hover e seções com mais ritmo melhoram a navegação.</p>
+          </article>
+        </div>
+        <button class="carousel-button" type="button" data-carousel-next aria-label="Próximo slide">›</button>
+      </div>
+    </section>
+
+    <section class="demo-section final-reveal" id="processo">
+      <div class="section-heading">
+        <p class="eyebrow">Como funciona</p>
+        <h2 data-copy="process-title">Um processo simples para tirar seu site do papel.</h2>
+      </div>
+
+      <div class="demo-grid process-grid">
+        <article>
+          <span>01</span>
+          <h3>Briefing</h3>
+          <p>Entendo objetivo, público, referências e o que o site precisa resolver.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Design</h3>
+          <p>Crio estrutura visual com foco em clareza e experiência mobile.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Desenvolvimento</h3>
+          <p>Transformo o layout em uma página rápida, responsiva e pronta.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="stage-piece final-piece feature-wall final-reveal">
+      <article>Choices</article>
+      <article>Pomodoro</article>
+      <article>Flashcards</article>
+      <article>Biblioteca</article>
+      <article>Ranking</article>
+      <article>Dashboard</article>
+    </section>
+
+    <section class="demo-contact final-reveal" id="contato">
+      <div>
+        <p class="eyebrow">Vamos conversar</p>
+        <h2 data-copy="contact-title">Quer um site com cara profissional para seu negócio?</h2>
+        <p data-copy="contact-text">Me chame com uma ideia, referência ou objetivo. Eu ajudo a transformar isso em uma página bonita e responsiva.</p>
+      </div>
+      <a href="./index.html#contato" data-copy="contact-action" data-stage-link>Entrar em contato</a>
+    </section>
+  </main>
+
+  <script src="evolucao.js"></script>
+</body>
+</html>

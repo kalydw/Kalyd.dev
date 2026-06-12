@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sobre Kalyd, desenvolvedor front-end focado em interfaces modernas, responsivas e intuitivas." />
+  <title>Sobre Mim | Kalyd.dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Voltar ao portfólio">
+      <span class="brand-mark">K</span>
+      <span>Kalyd.dev</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-menu" aria-label="Navegação principal">
+      <a href="index.html#servicos">Serviços</a>
+      <a href="index.html#projetos">Projetos</a>
+      <a href="index.html#processo">Processo</a>
+      <a href="evolucao.html">Evolução</a>
+      <a href="#contato">Contato</a>
+      <div class="theme-switcher" aria-label="Alterar tema">
+        <button class="theme-dot theme-dot-current" type="button" data-theme-button="default" aria-label="Tema atual"></button>
+        <button class="theme-dot theme-dot-purple" type="button" data-theme-button="purple" aria-label="Tema roxo"></button>
+        <button class="theme-dot theme-dot-red" type="button" data-theme-button="red" aria-label="Tema vermelho claro"></button>
+      </div>
+      <button class="header-hide-button" type="button" data-header-hide aria-label="Esconder cabeçalho">↑</button>
+    </nav>
+  </header>
+
+  <button class="header-show-button" type="button" data-header-show aria-label="Mostrar cabeçalho">↓</button>
+
+  <main id="inicio">
+    <section class="hero section-shell">
+      <div class="hero-copy anim slide-up">
+        <p class="eyebrow">Sobre mim</p>
+        <h1>Olá, eu sou Kalyd.</h1>
+        <p class="eyebrow about-role">Desenvolvedor Front-end</p>
+        <p class="hero-text">Sou desenvolvedor front-end e gosto de transformar ideias em interfaces modernas, rápidas e intuitivas. Atualmente, trabalho em projetos como o FMEDCHOICES e também desenvolvo projetos pessoais, onde posso explorar novas ideias, experiências e soluções.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="index.html#projetos">Ver projetos</a>
+          <a class="button button-secondary" href="#contato">Entrar em contato</a>
+        </div>
+      </div>
+
+      <div class="about-photo-card anim scale-in d1" aria-label="Foto de Kalyd">
+        <img src="assets/images/kalyd-photo.png" alt="Foto de Kalyd" />
+      </div>
+    </section>
+
+    <section class="section-shell intro-strip anim fade">
+      <p>Minha trajetória começou pela curiosidade por tecnologia e desenvolvimento web. Com o tempo, passei a estudar HTML, CSS e JavaScript, desenvolvendo projetos próprios e buscando criar experiências cada vez mais profissionais.</p>
+      <span></span>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-heading anim slide-up">
+        <p class="eyebrow">Como comecei</p>
+        <h2>Aprendendo, testando e evoluindo projeto por projeto.</h2>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-heading anim slide-up">
+        <p class="eyebrow">O que eu gosto de criar</p>
+        <h2>Interfaces úteis, bonitas e pensadas para pessoas reais.</h2>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-step anim fade">
+          <span>01</span>
+          <h3>Landing pages</h3>
+          <p>Páginas focadas em apresentação, conversão e comunicação clara.</p>
+        </article>
+        <article class="process-step anim fade d1">
+          <span>02</span>
+          <h3>Sistemas web</h3>
+          <p>Experiências organizadas para resolver fluxos e tarefas do usuário.</p>
+        </article>
+        <article class="process-step anim fade d2">
+          <span>03</span>
+          <h3>Dashboards</h3>
+          <p>Telas para visualizar dados, progresso e informações importantes.</p>
+        </article>
+        <article class="process-step anim fade d3">
+          <span>04</span>
+          <h3>Interfaces responsivas</h3>
+          <p>Layouts que funcionam bem do celular ao desktop.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-heading anim slide-up">
+        <p class="eyebrow">Em desenvolvimento</p>
+        <h2>Projetos atuais que ajudam a mostrar minha evolução.</h2>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card anim slide-up">
+          <span>01</span>
+          <h3>FMEDCHOICES</h3>
+          <p>Plataforma de estudos para medicina.</p>
+        </article>
+        <article class="service-card anim slide-up d1">
+          <span>02</span>
+          <h3>SoulForge</h3>
+          <p>Projeto pessoal focado em conteúdo gamer.</p>
+        </article>
+        <article class="service-card anim slide-up d2">
+          <span>03</span>
+          <h3>Portfólio Kalyd.dev</h3>
+          <p>Atualizações e melhorias constantes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell beyond-code">
+      <div class="beyond-code-wrap">
+        <div class="beyond-code-copy anim slide-up">
+          <p class="eyebrow">Além do código</p>
+          <h2>Interesses que também influenciam minha forma de criar.</h2>
+          <p>Além do desenvolvimento web, gosto de tecnologia, jogos e projetos pessoais. Tenho interesse por RPGs, sistemas de progressão, interfaces bem construídas e experiências que unem design, funcionalidade e atenção aos detalhes.</p>
+        </div>
+
+        <div class="beyond-code-visual anim scale-in d1" aria-label="Símbolo de desenvolvimento, tecnologia e RPG">
+          <img src="assets/images/sword-code.svg" alt="Espada com símbolo de código representando desenvolvimento, RPGs e projetos pessoais" />
+        </div>
+      </div>
+
+      <div class="beyond-code-grid">
+        <article class="process-step anim fade">
+          <span>⚔️</span>
+          <h3>RPGs e Exploração</h3>
+          <p>Gosto de jogos focados em descoberta, progressão e construção de mundos bem elaborados.</p>
+        </article>
+        <article class="process-step anim fade d1">
+          <span>🔥</span>
+          <h3>Desafios</h3>
+          <p>Resolver problemas complexos e encontrar soluções elegantes é uma das partes que mais gosto no desenvolvimento.</p>
+        </article>
+        <article class="process-step anim fade d2">
+          <span>💻</span>
+          <h3>Tecnologia</h3>
+          <p>Estou sempre estudando novas ferramentas, padrões e formas de criar experiências melhores.</p>
+        </article>
+        <article class="process-step anim fade d3">
+          <span>🚀</span>
+          <h3>Projetos pessoais</h3>
+          <p>Além dos trabalhos profissionais, também desenvolvo projetos próprios, como FMEDCHOICES, SoulForge e novas ideias.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-heading anim slide-up">
+        <p class="eyebrow">Minha forma de trabalhar</p>
+        <h2>Um processo simples para transformar ideias em interfaces.</h2>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-step anim fade">
+          <span>01</span>
+          <h3>Entender o problema</h3>
+          <p>Antes de criar, busco entender objetivo, contexto e público.</p>
+        </article>
+        <article class="process-step anim fade d1">
+          <span>02</span>
+          <h3>Planejar a solução</h3>
+          <p>Organizo estrutura, conteúdo e caminho visual da interface.</p>
+        </article>
+        <article class="process-step anim fade d2">
+          <span>03</span>
+          <h3>Desenvolver</h3>
+          <p>Transformo a ideia em uma página funcional, responsiva e rápida.</p>
+        </article>
+        <article class="process-step anim fade d3">
+          <span>04</span>
+          <h3>Refinar detalhes</h3>
+          <p>Ajusto espaçamentos, estados, textos e comportamento mobile.</p>
+        </article>
+        <article class="process-step anim fade">
+          <span>05</span>
+          <h3>Entregar</h3>
+          <p>Finalizo com uma experiência polida e pronta para uso.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contato">
+      <div class="section-shell contact-wrap anim slide-up">
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h2>Vamos construir algo juntos?</h2>
+          <p>Se você tem uma ideia, projeto ou página que precisa ganhar forma, podemos conversar sobre o próximo passo.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button button-primary" href="https://wa.me/557798654680" target="_blank" rel="noreferrer">WhatsApp</a>
+          <a class="button button-secondary" href="index.html">Voltar ao portfólio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Kalyd.dev</span>
+    <p>Portfólio front-end criado com HTML, CSS e JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
