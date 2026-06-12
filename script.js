@@ -11,7 +11,8 @@ const savedTheme = localStorage.getItem('site-theme') || 'default';
 const themeFlowColors = {
   default: '#d6ff5f',
   purple: '#c084fc',
-  red: '#e53935'
+  red: '#e53935',
+  'dark-purple': '#7c3cff'
 };
 
 const playThemeFlow = (button, theme) => {
@@ -34,6 +35,7 @@ const playThemeFlow = (button, theme) => {
 const applyTheme = (theme) => {
   document.body.dataset.theme = theme;
   localStorage.setItem('site-theme', theme);
+  localStorage.setItem('evolution-theme', theme);
 
   themeButtons.forEach((button) => {
     const isActive = button.dataset.themeButton === theme;

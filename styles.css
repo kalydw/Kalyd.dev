@@ -88,6 +88,35 @@ body[data-theme='red'] {
   --shadow: 0 24px 70px rgba(122, 44, 39, 0.13);
 }
 
+body[data-theme='dark-purple'] {
+  --bg: #08070d;
+  --bg-soft: #111018;
+  --ink: #f8f7ff;
+  --text: #f8f7ff;
+  --muted: #b8b2c8;
+  --muted-dark: #b8b2c8;
+  --surface: #121018;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-dark: rgba(255, 255, 255, 0.12);
+  --accent: #7c3cff;
+  --accent-2: #a855f7;
+  --accent-3: #ffffff;
+  --header-bg: rgba(8, 7, 13, 0.82);
+  --header-menu-bg: rgba(8, 7, 13, 0.97);
+  --nav-hover: rgba(124, 60, 255, 0.16);
+  --control-bg: rgba(255, 255, 255, 0.08);
+  --secondary-bg: rgba(255, 255, 255, 0.05);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --band-bg: color-mix(in srgb, var(--bg) 84%, var(--accent) 16%);
+  --solid-card: #121018;
+  --panel-bg: linear-gradient(180deg, rgba(124, 60, 255, 0.14), rgba(255, 255, 255, 0.035));
+  --body-edge: rgba(168, 85, 247, 0.22);
+  --body-grid: rgba(255, 255, 255, 0.04);
+  --body-grid-soft: rgba(255, 255, 255, 0.02);
+  --eyebrow-soft: #c4b5fd;
+  --shadow: 0 26px 80px rgba(0, 0, 0, 0.42);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -345,6 +374,14 @@ body.header-hidden .site-header {
   color: var(--ink);
   background: var(--accent);
   border-radius: 6px;
+  overflow: hidden;
+}
+
+.brand-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .site-nav {
@@ -403,6 +440,10 @@ body.header-hidden .site-header {
 
 .theme-dot-red {
   background: linear-gradient(135deg, #e53935 0 50%, #fff8f6 50% 100%);
+}
+
+.theme-dot-dark-purple {
+  background: linear-gradient(135deg, #050505 0 48%, #7c3cff 48% 76%, #ffffff 76% 100%);
 }
 
 .header-hide-button,
@@ -1245,6 +1286,18 @@ body[data-theme='red'] .beyond-code-visual img {
   transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
+body[data-theme='dark-purple'] .contact-form,
+body[data-theme='dark-purple'] .modal .contact-form {
+  background: rgba(255, 255, 255, 0.055);
+}
+
+body[data-theme='dark-purple'] .contact-form input,
+body[data-theme='dark-purple'] .contact-form textarea {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text);
+}
+
 .contact-form input {
   min-height: 48px;
   padding: 0 14px;
@@ -1376,6 +1429,20 @@ body[data-theme='red'] .beyond-code-visual img {
 .site-footer span {
   color: var(--text);
   font-weight: 800;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 
 .anim {

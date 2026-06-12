@@ -117,11 +117,12 @@ const stages = {
   }
 };
 
-const savedTheme = localStorage.getItem('evolution-theme') || 'default';
+const savedTheme = localStorage.getItem('site-theme') || localStorage.getItem('evolution-theme') || 'default';
 
 const applyTheme = (theme) => {
   document.body.dataset.theme = theme;
   localStorage.setItem('evolution-theme', theme);
+  localStorage.setItem('site-theme', theme);
 
   themeButtons.forEach((button) => {
     const isActive = button.dataset.themeButton === theme;

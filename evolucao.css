@@ -36,6 +36,18 @@ body[data-theme='red'] {
   --shadow: 0 24px 70px rgba(122, 44, 39, 0.13);
 }
 
+body[data-theme='dark-purple'] {
+  --bg: #08070d;
+  --text: #f8f7ff;
+  --muted: #b8b2c8;
+  --soft: #121018;
+  --line: rgba(255, 255, 255, 0.12);
+  --accent: #7c3cff;
+  --accent-2: #a855f7;
+  --card: rgba(255, 255, 255, 0.05);
+  --shadow: 0 26px 80px rgba(0, 0, 0, 0.42);
+}
+
 body[data-stage='animated'] {
   --radius: 18px;
 }
@@ -179,6 +191,14 @@ button {
   height: 34px;
   background: var(--accent);
   color: #111111;
+  overflow: hidden;
+}
+
+.brand-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .intro-nav > a:last-child {
@@ -284,6 +304,10 @@ button {
   background: linear-gradient(135deg, #e53935 0 50%, #fff8f6 50% 100%);
 }
 
+.theme-dot-dark-purple {
+  background: linear-gradient(135deg, #050505 0 48%, #7c3cff 48% 76%, #ffffff 76% 100%);
+}
+
 .evolving-page {
   width: min(1560px, calc(100% - 48px));
   margin: 0 auto 80px;
@@ -314,7 +338,7 @@ body[data-stage='basic'] {
   font-family: Arial, sans-serif;
 }
 
-body[data-stage='basic']:not([data-theme='red']):not([data-theme='purple']) {
+body[data-stage='basic']:not([data-theme='red']):not([data-theme='purple']):not([data-theme='dark-purple']) {
   --bg: #ffffff;
   --text: #111111;
   --muted: #555555;
@@ -326,7 +350,7 @@ body[data-stage='basic']:not([data-theme='red']):not([data-theme='purple']) {
   --shadow: none;
 }
 
-body[data-stage='animated']:not([data-theme='red']):not([data-theme='purple']) {
+body[data-stage='animated']:not([data-theme='red']):not([data-theme='purple']):not([data-theme='dark-purple']) {
   --bg: #120f2a;
   --text: #fff8ff;
   --muted: #d7c8ff;
@@ -338,7 +362,7 @@ body[data-stage='animated']:not([data-theme='red']):not([data-theme='purple']) {
   --shadow: 0 18px 50px rgba(255, 79, 216, 0.24);
 }
 
-body[data-stage='final']:not([data-theme='red']):not([data-theme='purple']) {
+body[data-stage='final']:not([data-theme='red']):not([data-theme='purple']):not([data-theme='dark-purple']) {
   --bg: #101110;
   --text: #f8f5ec;
   --muted: #b8b2a3;
