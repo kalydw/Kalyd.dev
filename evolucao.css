@@ -205,6 +205,12 @@ button {
   object-fit: cover;
 }
 
+body[data-theme='red'] .brand span,
+body[data-theme='red'] .demo-brand span {
+  border: 1px solid rgba(229, 57, 53, 0.18);
+  background: #fffdfc;
+}
+
 .intro-nav > a:last-child {
   color: var(--muted);
   font-weight: 800;

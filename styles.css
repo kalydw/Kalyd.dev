@@ -388,6 +388,11 @@ body.header-hidden .site-header {
   object-fit: cover;
 }
 
+body[data-theme='red'] .brand-mark {
+  border: 1px solid rgba(229, 57, 53, 0.18);
+  background: #fffdfc;
+}
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -1448,6 +1453,10 @@ body[data-theme='dark-purple'] .contact-form textarea {
   border-radius: 6px;
   object-fit: cover;
   box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+body[data-theme='red'] .footer-logo {
+  background: #fffdfc;
 }
 
 .anim {
