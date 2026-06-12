@@ -1,4 +1,5 @@
 :root {
+  --brand-logo-url: url('assets/icons/kalyd-logo-default.png');
   --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --bg: #ffffff;
   --text: #111111;
@@ -13,6 +14,7 @@
 }
 
 body[data-theme='purple'] {
+  --brand-logo-url: url('assets/icons/kalyd-logo-purple.png');
   --bg: #16111f;
   --text: #fbf7ff;
   --muted: #c9bdd7;
@@ -25,6 +27,7 @@ body[data-theme='purple'] {
 }
 
 body[data-theme='red'] {
+  --brand-logo-url: url('assets/icons/kalyd-logo-red.png');
   --bg: #fff8f6;
   --text: #2a1110;
   --muted: #775b58;
@@ -37,6 +40,7 @@ body[data-theme='red'] {
 }
 
 body[data-theme='dark-purple'] {
+  --brand-logo-url: url('assets/icons/kalyd-logo-dark-purple.png');
   --bg: #08070d;
   --text: #f8f7ff;
   --muted: #b8b2c8;
@@ -195,6 +199,7 @@ button {
 }
 
 .brand-logo {
+  content: var(--brand-logo-url);
   display: block;
   width: 100%;
   height: 100%;
