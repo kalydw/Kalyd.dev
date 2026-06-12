@@ -375,8 +375,7 @@ body.header-hidden .site-header {
   place-items: center;
   width: 32px;
   height: 32px;
-  color: var(--ink);
-  background: var(--accent);
+  background: transparent;
   border-radius: 6px;
   overflow: hidden;
 }
