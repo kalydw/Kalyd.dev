@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Confirmação de envio da mensagem pelo portfólio Kalyd.dev." />
+  <title>Mensagem enviada | Kalyd.dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html#inicio" aria-label="Voltar ao início">
+      <span class="brand-mark">K</span>
+      <span>Kalyd.dev</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-menu" aria-label="Navegação principal">
+      <a href="index.html#servicos">Serviços</a>
+      <a href="index.html#projetos">Projetos</a>
+      <a href="index.html#processo">Processo</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="evolucao.html">Evolução</a>
+      <a href="index.html#contato">Contato</a>
+      <div class="theme-switcher" aria-label="Alterar tema">
+        <button class="theme-dot theme-dot-current" type="button" data-theme-button="default" aria-label="Tema atual"></button>
+        <button class="theme-dot theme-dot-purple" type="button" data-theme-button="purple" aria-label="Tema roxo"></button>
+        <button class="theme-dot theme-dot-red" type="button" data-theme-button="red" aria-label="Tema vermelho claro"></button>
+      </div>
+      <button class="header-hide-button" type="button" data-header-hide aria-label="Esconder cabeçalho">↑</button>
+    </nav>
+  </header>
+
+  <button class="header-show-button" type="button" data-header-show aria-label="Mostrar cabeçalho">↓</button>
+
+  <main id="inicio">
+    <section class="hero section-shell">
+      <div class="hero-copy anim slide-up">
+        <p class="eyebrow">Contato recebido</p>
+        <h1>Mensagem enviada com sucesso.</h1>
+        <p class="hero-text">Obrigado pelo contato! Recebi sua mensagem e vou responder o mais breve possível.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="index.html#inicio">Voltar ao início</a>
+          <a class="button button-secondary" href="https://wa.me/557798654680" target="_blank" rel="noreferrer">Chamar no WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="hero-panel anim scale-in d1" aria-label="Confirmação de envio">
+        <div class="panel-topline">
+          <span>Status</span>
+          <strong>OK</strong>
+        </div>
+        <div class="preview-card preview-main">
+          <span class="brand-mark" aria-hidden="true">✓</span>
+          <strong>Mensagem recebida</strong>
+          <p>Seu pedido foi enviado pelo formulário do portfólio e entrou na fila de resposta.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Kalyd.dev</span>
+    <p>Portfólio front-end criado com HTML, CSS e JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
