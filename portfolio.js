@@ -1,5 +1,19 @@
-const projectFilters = ['Todos', 'Landing Page', 'Institucional', 'Sistema/Web App', 'Imobiliário'];
+const projectFilters = [
+  { label: 'Todos', value: 'Todos' },
+  { label: 'Landing Page', value: 'Landing Page' },
+  { label: 'Institucional', value: 'Institucional' },
+  { label: 'Sistema/Web App', value: 'Sistema/Web App' },
+  { label: 'Imobiliária', value: 'Imobiliário' },
+];
 const projects = window.kalydProjects || [];
+
+const revealRenderedCards = (container) => {
+  requestAnimationFrame(() => {
+    container.querySelectorAll('.portfolio-card.anim').forEach((card) => {
+      card.classList.add('visible');
+    });
+  });
+};
 
 const createProjectVisual = (project) => {
   if (project.image) {
@@ -49,6 +63,7 @@ const renderFeaturedProjects = () => {
     .slice(0, 3)
     .map((project, index) => createProjectCard(project, index, true))
     .join('');
+  revealRenderedCards(container);
 };
 
 const renderPortfolio = (activeFilter = 'Todos') => {
@@ -64,6 +79,7 @@ const renderPortfolio = (activeFilter = 'Todos') => {
       : projects.filter((project) => project.filters.includes(activeFilter) || project.category === activeFilter);
 
   grid.innerHTML = filteredProjects.map((project, index) => createProjectCard(project, index)).join('');
+  revealRenderedCards(grid);
 };
 
 const renderFilters = () => {
@@ -75,8 +91,8 @@ const renderFilters = () => {
 
   container.innerHTML = projectFilters
     .map((filter, index) => `
-      <button class="filter-button ${index === 0 ? 'active' : ''}" type="button" data-filter="${filter}">
-        ${filter}
+      <button class="filter-button ${index === 0 ? 'active' : ''}" type="button" data-filter="${filter.value}">
+        ${filter.label}
       </button>
     `)
     .join('');

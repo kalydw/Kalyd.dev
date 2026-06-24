@@ -1038,17 +1038,35 @@ section:not(.hero):not(.intro-strip):not(.contact-section) {
 
 .portfolio-toolbar {
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
+  padding: 26px;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 58%),
+    var(--solid-card);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-toolbar-copy {
+  max-width: 650px;
 }
 
 .portfolio-toolbar h2 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 0.98;
+  margin-top: 8px;
+  font-size: clamp(1.85rem, 4vw, 3.1rem);
+  line-height: 1.02;
   font-weight: 800;
   color: var(--ink);
+}
+
+.portfolio-toolbar-copy > p:last-child {
+  margin-top: 12px;
+  color: var(--muted-dark);
+  line-height: 1.65;
 }
 
 .filter-list {
@@ -1056,14 +1074,15 @@ section:not(.hero):not(.intro-strip):not(.contact-section) {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 10px;
+  max-width: 540px;
 }
 
 .filter-button {
-  min-height: 42px;
-  padding: 0 16px;
+  min-height: 44px;
+  padding: 0 18px;
   border: 1px solid var(--line-dark);
   border-radius: 999px;
-  background: var(--solid-card);
+  background: color-mix(in srgb, var(--bg-soft) 72%, var(--solid-card));
   color: var(--ink);
   font: inherit;
   font-size: 0.86rem;
@@ -1076,7 +1095,9 @@ section:not(.hero):not(.intro-strip):not(.contact-section) {
 .filter-button.active {
   transform: translateY(-2px);
   border-color: color-mix(in srgb, var(--accent-2) 58%, var(--line-dark));
-  background: color-mix(in srgb, var(--accent) 18%, var(--solid-card));
+  background: color-mix(in srgb, var(--accent) 28%, var(--solid-card));
+  color: var(--ink);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--accent-2) 18%, transparent);
 }
 
 .portfolio-grid {
@@ -1761,7 +1782,6 @@ body[data-theme='red'] .footer-logo {
   .project-card,
   .featured-project,
   .project-card.reverse,
-  .portfolio-toolbar,
   .project-detail-layout,
   .proof-section,
   .contact-wrap,
@@ -1790,6 +1810,16 @@ body[data-theme='red'] .footer-logo {
   .project-detail-visual,
   .project-detail-visual img {
     min-height: 420px;
+  }
+
+  .portfolio-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-list {
+    justify-content: flex-start;
+    max-width: none;
   }
 
   .case-grid {
