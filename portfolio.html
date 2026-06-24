@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Confirmação de envio da mensagem pelo portfólio Kalyd.dev." />
-  <title>Mensagem enviada | Kalyd.dev</title>
+  <meta name="description" content="Portfólio de projetos front-end desenvolvidos por Kalyd.dev." />
+  <title>Portfólio | Kalyd.dev</title>
   <link rel="icon" type="image/png" href="assets/icons/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,7 +13,7 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html#inicio" aria-label="Voltar ao início">
+    <a class="brand" href="index.html#inicio" aria-label="Ir para o início">
       <span class="brand-mark"><img class="brand-logo" src="assets/icons/kalyd-logo-default.png" alt="" /></span>
       <span>Kalyd.dev</span>
     </a>
@@ -45,36 +45,62 @@
   <button class="header-show-button" type="button" data-header-show aria-label="Mostrar cabeçalho">↓</button>
 
   <main id="inicio">
-    <section class="hero section-shell">
+    <section class="hero section-shell portfolio-hero">
       <div class="hero-copy anim slide-up">
-        <p class="eyebrow">Contato recebido</p>
-        <h1>Mensagem enviada com sucesso.</h1>
-        <p class="hero-text">Obrigado pelo contato! Recebi sua mensagem e vou responder o mais breve possível.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="index.html#inicio">Voltar ao início</a>
-          <a class="button button-secondary" href="https://wa.me/557798654680" target="_blank" rel="noreferrer">Chamar no WhatsApp</a>
-        </div>
+        <p class="eyebrow">Portfólio</p>
+        <h1>Projetos feitos para mostrar ideias com clareza.</h1>
+        <p class="hero-text">Uma seleção de sites, páginas e interfaces desenvolvidas com foco em apresentação profissional, responsividade e boa experiência de uso.</p>
       </div>
-
-      <div class="hero-panel anim scale-in d1" aria-label="Confirmação de envio">
+      <div class="hero-panel anim scale-in d1" aria-label="Resumo do portfólio">
         <div class="panel-topline">
-          <span>Status</span>
-          <strong>OK</strong>
+          <span>Projetos</span>
+          <strong>2026</strong>
         </div>
         <div class="preview-card preview-main">
-          <span class="brand-mark" aria-hidden="true">✓</span>
-          <strong>Mensagem recebida</strong>
-          <p>Seu pedido foi enviado pelo formulário do portfólio e entrou na fila de resposta.</p>
+          <span class="preview-label">Atualização simples</span>
+          <strong>Adicione no array</strong>
+          <p>Novos trabalhos entram pelo arquivo de projetos e aparecem automaticamente nas páginas.</p>
         </div>
       </div>
     </section>
+
+    <section class="section-shell">
+      <div class="portfolio-toolbar anim fade">
+        <div>
+          <p class="eyebrow">Projetos</p>
+          <h2>Explore por categoria</h2>
+        </div>
+        <div class="filter-list" data-project-filters aria-label="Filtrar projetos"></div>
+      </div>
+
+      <div class="portfolio-grid" data-project-grid></div>
+    </section>
   </main>
+
+  <div class="modal project-modal" data-project-modal aria-hidden="true">
+    <div class="modal-backdrop" data-project-modal-close></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+      <button class="modal-close" type="button" data-project-modal-close aria-label="Fechar resumo">×</button>
+      <div class="modal-heading">
+        <p class="eyebrow" data-project-modal-category></p>
+        <h2 id="project-modal-title" data-project-modal-title></h2>
+        <p data-project-modal-description></p>
+      </div>
+      <div class="project-tags" data-project-modal-tags></div>
+      <div class="project-modal-actions">
+        <a class="button button-primary" href="#" data-project-modal-link>Ver detalhes</a>
+        <a class="button button-secondary" href="#" target="_blank" rel="noreferrer" data-project-modal-external>Ver online</a>
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <span class="footer-brand"><img class="footer-logo" src="assets/icons/kalyd-logo-default.png" alt="" />Kalyd.dev</span>
     <p>Portfólio front-end criado com HTML, CSS e JavaScript.</p>
   </footer>
 
+  <script src="projects.js"></script>
+  <script src="portfolio.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

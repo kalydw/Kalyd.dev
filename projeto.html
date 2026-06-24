@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Detalhes de projeto do portfólio Kalyd.dev." />
+  <title>Projeto | Kalyd.dev</title>
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html#inicio" aria-label="Ir para o início">
+      <span class="brand-mark"><img class="brand-logo" src="assets/icons/kalyd-logo-default.png" alt="" /></span>
+      <span>Kalyd.dev</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-menu" aria-label="Navegação principal">
+      <a href="index.html#servicos">Serviços</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="index.html#processo">Processo</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="evolucao.html">Evolução</a>
+      <a href="index.html#contato">Contato</a>
+      <div class="theme-switcher" aria-label="Alterar tema">
+        <button class="theme-dot theme-dot-current" type="button" data-theme-button="default" aria-label="Tema atual"></button>
+        <button class="theme-dot theme-dot-purple" type="button" data-theme-button="purple" aria-label="Tema roxo"></button>
+        <button class="theme-dot theme-dot-red" type="button" data-theme-button="red" aria-label="Tema vermelho claro"></button>
+        <button class="theme-dot theme-dot-dark-purple" type="button" data-theme-button="dark-purple" aria-label="Tema escuro roxo"></button>
+      </div>
+      <button class="header-hide-button" type="button" data-header-hide aria-label="Esconder cabeçalho">↑</button>
+    </nav>
+  </header>
+
+  <button class="header-show-button" type="button" data-header-show aria-label="Mostrar cabeçalho">↓</button>
+
+  <main id="inicio">
+    <section class="hero section-shell project-detail-hero" data-project-detail>
+      <div class="hero-copy anim slide-up">
+        <p class="eyebrow" data-project-category></p>
+        <h1 data-project-title></h1>
+        <p class="hero-text" data-project-description></p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#" target="_blank" rel="noreferrer" data-project-external>Ver projeto online</a>
+          <a class="button button-secondary" href="portfolio.html">Voltar ao portfólio</a>
+        </div>
+        <div class="project-tags" data-project-tags></div>
+      </div>
+
+      <div class="project-detail-visual anim scale-in d1" data-project-visual></div>
+    </section>
+
+    <section class="section-shell" data-project-detail>
+      <div class="case-grid">
+        <article class="case-card anim slide-up">
+          <span>Desafio</span>
+          <p data-project-challenge></p>
+        </article>
+        <article class="case-card anim slide-up d1">
+          <span>Solução</span>
+          <p data-project-solution></p>
+        </article>
+        <article class="case-card anim slide-up d2">
+          <span>Resultado</span>
+          <p data-project-result></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell" data-project-detail>
+      <div class="section-heading anim slide-up">
+        <p class="eyebrow">Resultados do projeto</p>
+        <h2>Números e pontos que ajudam a entender a dimensão do trabalho.</h2>
+      </div>
+      <div class="process-grid" data-project-metrics></div>
+    </section>
+
+    <section class="section-shell" data-project-detail>
+      <div class="project-detail-layout">
+        <div class="section-heading anim slide-up">
+          <p class="eyebrow">O que foi desenvolvido</p>
+          <h2>Estrutura criada para transformar a ideia em uma experiência real.</h2>
+        </div>
+        <div class="project-detail-panel anim slide-up d1">
+          <ul class="detail-list" data-project-features></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero section-shell project-not-found" data-project-not-found hidden>
+      <div class="hero-copy anim slide-up">
+        <p class="eyebrow">Projeto não encontrado</p>
+        <h1>Esse projeto ainda não está disponível.</h1>
+        <p class="hero-text">Volte para o portfólio para ver os projetos cadastrados.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="portfolio.html">Voltar ao portfólio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand"><img class="footer-logo" src="assets/icons/kalyd-logo-default.png" alt="" />Kalyd.dev</span>
+    <p>Portfólio front-end criado com HTML, CSS e JavaScript.</p>
+  </footer>
+
+  <script src="projects.js"></script>
+  <script src="projeto.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

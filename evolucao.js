@@ -88,7 +88,7 @@ const stages = {
       eyebrow: 'Desenvolvimento front-end',
       'hero-title': 'Crio sites e interfaces web com visual profissional.',
       'hero-text': 'Desenvolvo landing pages, portfolios e aplicacoes responsivas como o FMEDCHOICES, uma plataforma de estudos para estudantes de medicina na Argentina.',
-      'primary-action': 'Ver FMEDCHOICES',
+      'primary-action': 'Ver portfolio',
       'secondary-action': 'Solicitar orcamento',
       'panel-status': 'Disponivel para freelas',
       'panel-label': 'Projeto real',
@@ -113,7 +113,7 @@ const stages = {
     images: {
       'project-image': 'https://medarena.vercel.app/_next/image?url=%2Fimages%2Fhero-mockup.png&w=1200&q=85'
     },
-    link: './index.html#contato'
+    link: './portfolio.html'
   }
 };
 
@@ -268,7 +268,7 @@ requestAnimationFrame(() => {
   document.body.classList.add('page-ready');
 });
 
-const pageTransitionTargets = ['index.html', 'sobre.html', 'evolucao.html'];
+const pageTransitionTargets = ['index.html', 'portfolio.html', 'projeto.html', 'sobre.html', 'evolucao.html', 'obrigado.html'];
 const hasReducedPageMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const shouldUsePageTransition = (link) => {

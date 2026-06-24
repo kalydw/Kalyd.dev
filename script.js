@@ -129,7 +129,7 @@ requestAnimationFrame(() => {
   document.body.classList.add('page-ready');
 });
 
-const pageTransitionTargets = ['index.html', 'sobre.html', 'evolucao.html'];
+const pageTransitionTargets = ['index.html', 'portfolio.html', 'projeto.html', 'sobre.html', 'evolucao.html', 'obrigado.html'];
 const hasReducedPageMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const shouldUsePageTransition = (link) => {
