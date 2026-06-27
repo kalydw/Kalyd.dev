@@ -5,8 +5,6 @@ const modal = document.querySelector('[data-modal]');
 const modalOpenButton = document.querySelector('[data-modal-open]');
 const modalCloseButtons = document.querySelectorAll('[data-modal-close]');
 const themeButtons = document.querySelectorAll('[data-theme-button]');
-const headerHideButton = document.querySelector('[data-header-hide]');
-const headerShowButton = document.querySelector('[data-header-show]');
 const savedTheme = localStorage.getItem('site-theme') || 'default';
 const themeFlowColors = {
   default: '#d6ff5f',
@@ -93,15 +91,6 @@ menu?.querySelectorAll('a').forEach((link) => {
 
 modalOpenButton?.addEventListener('click', openModal);
 modalCloseButtons.forEach((button) => button.addEventListener('click', closeModal));
-
-headerHideButton?.addEventListener('click', () => {
-  closeMenu();
-  document.body.classList.add('header-hidden');
-});
-
-headerShowButton?.addEventListener('click', () => {
-  document.body.classList.remove('header-hidden');
-});
 
 themeButtons.forEach((button) => {
   button.addEventListener('click', () => {
