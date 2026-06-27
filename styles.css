@@ -319,7 +319,7 @@ button {
 }
 
 .section-shell {
-  width: min(1220px, calc(100% - 40px));
+  width: min(1560px, calc(100% - 48px));
   margin-inline: auto;
 }
 
