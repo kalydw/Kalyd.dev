@@ -28,21 +28,34 @@ if (!project) {
   document.title = `${project.name} | Projeto Kalyd.dev`;
   setText('[data-project-category]', project.category);
   setText('[data-project-title]', project.name);
-  setText('[data-project-description]', project.description);
+  setText('[data-project-description]', project.fullDescription || project.description);
+  setText('[data-project-status]', project.status);
+  setText('[data-project-type]', project.type);
+  setText('[data-project-about]', project.fullDescription || project.description);
+  setText('[data-project-objective]', project.objective);
   setText('[data-project-challenge]', project.challenge);
   setText('[data-project-solution]', project.solution);
   setText('[data-project-result]', project.result);
 
   const externalLink = document.querySelector('[data-project-external]');
   if (externalLink) {
-    externalLink.href = project.link;
+    externalLink.href = project.onlineUrl || project.link;
   }
 
   const visual = document.querySelector('[data-project-visual]');
+  const coverImage = project.coverImage || project.image;
+
   if (visual) {
-    visual.innerHTML = project.image
-      ? `<img src="${project.image}" alt="${project.imageAlt}" />`
-      : `<div class="project-fallback"><span>${project.category}</span><strong>${project.name}</strong><small>${project.tags.slice(0, 3).join(' • ')}</small></div>`;
+    visual.innerHTML = coverImage
+      ? `<img src="${coverImage}" alt="${project.imageAlt}" />`
+      : `
+        <div class="project-fallback">
+          <div class="fallback-browser"><span></span><span></span><span></span></div>
+          <div class="fallback-hero"></div>
+          <div class="fallback-stack"><span></span><span></span><span></span></div>
+          <small>${project.category}</small>
+        </div>
+      `;
   }
 
   const tags = document.querySelector('[data-project-tags]');
@@ -62,5 +75,34 @@ if (!project) {
       .join('');
   }
 
-  renderList('[data-project-features]', project.features);
+  renderList('[data-project-features]', project.developed || project.features);
+
+  const gallery = document.querySelector('[data-project-gallery]');
+  if (gallery) {
+    const images = project.gallery || [];
+
+    gallery.innerHTML = images.length
+      ? images
+          .map((image, index) => `
+            <figure class="gallery-card anim slide-up ${index ? `d${Math.min(index, 3)}` : ''}">
+              <img src="${image.src}" alt="${image.alt}" loading="lazy" />
+              <figcaption>${image.label}</figcaption>
+            </figure>
+          `)
+          .join('')
+      : `
+        <div class="gallery-card gallery-fallback anim slide-up">
+          <div class="project-fallback">
+            <div class="fallback-browser"><span></span><span></span><span></span></div>
+            <div class="fallback-hero"></div>
+            <div class="fallback-stack"><span></span><span></span><span></span></div>
+            <small>${project.category}</small>
+          </div>
+        </div>
+      `;
+
+    requestAnimationFrame(() => {
+      gallery.querySelectorAll('.anim').forEach((item) => item.classList.add('visible'));
+    });
+  }
 }

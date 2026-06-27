@@ -16,19 +16,26 @@ const revealRenderedCards = (container) => {
 };
 
 const createProjectVisual = (project) => {
-  if (project.image) {
+  const image = project.coverImage || project.image;
+
+  if (image) {
     return `
       <div class="project-card-visual project-screenshot">
-        <img src="${project.image}" alt="${project.imageAlt}" loading="lazy" />
+        <img src="${image}" alt="${project.imageAlt}" loading="lazy" />
       </div>
     `;
   }
 
   return `
     <div class="project-card-visual project-fallback" aria-hidden="true">
-      <span>${project.category}</span>
-      <strong>${project.name}</strong>
-      <small>${project.tags.slice(0, 3).join(' • ')}</small>
+      <div class="fallback-browser">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="fallback-hero"></div>
+      <div class="fallback-stack">
+        <span></span><span></span><span></span>
+      </div>
+      <small>${project.category}</small>
     </div>
   `;
 };
@@ -41,7 +48,7 @@ const createProjectCard = (project, index = 0, compact = false) => `
       <h3>${project.name}</h3>
       <p>${project.shortDescription}</p>
       <div class="project-tags" aria-label="Tags do projeto ${project.name}">
-        ${project.tags.slice(0, compact ? 4 : 6).map((tag) => `<span>${tag}</span>`).join('')}
+        ${project.tags.slice(0, 3).map((tag) => `<span>${tag}</span>`).join('')}
       </div>
       <div class="portfolio-card-actions">
         <button class="button button-secondary" type="button" data-project-summary="${project.id}">Ver resumo</button>
@@ -98,7 +105,8 @@ const renderFilters = () => {
     .join('');
 
   container.addEventListener('click', (event) => {
-    const button = event.target.closest('[data-filter]');
+    const target = event.target instanceof Element ? event.target : null;
+    const button = target?.closest('[data-filter]');
 
     if (!button) {
       return;
@@ -119,11 +127,12 @@ const openProjectModal = (projectId) => {
   }
 
   modal.querySelector('[data-project-modal-category]').textContent = project.category;
+  modal.querySelector('[data-project-modal-status]').textContent = project.status || '';
   modal.querySelector('[data-project-modal-title]').textContent = project.name;
-  modal.querySelector('[data-project-modal-description]').textContent = project.description;
+  modal.querySelector('[data-project-modal-description]').textContent = project.shortDescription || project.description;
   modal.querySelector('[data-project-modal-tags]').innerHTML = project.tags.map((tag) => `<span>${tag}</span>`).join('');
   modal.querySelector('[data-project-modal-link]').href = `projeto.html?id=${project.id}`;
-  modal.querySelector('[data-project-modal-external]').href = project.link;
+  modal.querySelector('[data-project-modal-external]').href = project.onlineUrl || project.link;
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
   modal.querySelector('[data-project-modal-close]')?.focus();
