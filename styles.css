@@ -311,6 +311,11 @@ a {
   text-decoration: none;
 }
 
+section[id],
+main[id] {
+  scroll-margin-top: 96px;
+}
+
 button {
   font: inherit;
 }
@@ -837,10 +842,29 @@ section:not(.hero):not(.intro-strip):not(.contact-section) {
   line-height: 1.7;
 }
 
-.services-grid {
+.services-grid,
+.skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+}
+
+.about-preview {
+  padding-top: 24px !important;
+}
+
+.about-preview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(180px, auto);
+  gap: 34px;
+  align-items: end;
+}
+
+.about-preview-grid p {
+  max-width: 780px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
 
 .included-grid,
@@ -937,7 +961,8 @@ section:not(.hero):not(.intro-strip):not(.contact-section) {
 }
 
 .service-card,
-.process-step {
+.process-step,
+.skill-card {
   min-height: 210px;
   padding: 24px;
   display: flex;
@@ -946,7 +971,8 @@ section:not(.hero):not(.intro-strip):not(.contact-section) {
 }
 
 .service-card span,
-.process-step span {
+.process-step span,
+.skill-card span {
   color: var(--accent);
   font-size: 0.82rem;
   font-weight: 800;
@@ -954,6 +980,7 @@ section:not(.hero):not(.intro-strip):not(.contact-section) {
 
 .service-card h3,
 .process-step h3,
+.skill-card h3,
 .project-content h3 {
   margin: 18px 0 10px;
   font-size: 1.35rem;
@@ -962,11 +989,43 @@ section:not(.hero):not(.intro-strip):not(.contact-section) {
 
 .service-card p,
 .process-step p,
+.skill-card p,
 .project-content p,
 .contact-wrap p {
   color: var(--muted);
   font-size: 0.96rem;
   line-height: 1.62;
+}
+
+.skill-card {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent 62%),
+    var(--card-bg);
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent, color-mix(in srgb, var(--accent) 10%, transparent), transparent);
+  opacity: 0;
+  transform: translateX(-55%);
+  transition: opacity 180ms ease, transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+  transform: translateX(55%);
+}
+
+.skill-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .work-section {
@@ -2139,6 +2198,7 @@ body[data-theme='red'] .footer-logo {
   .proof-section,
   .contact-wrap,
   .beyond-code-wrap,
+  .about-preview-grid,
   .section-heading.split {
     grid-template-columns: 1fr;
   }
@@ -2153,6 +2213,7 @@ body[data-theme='red'] .footer-logo {
   }
 
   .services-grid,
+  .skills-grid,
   .process-grid,
   .process-grid-five,
   .included-grid,
@@ -2419,6 +2480,7 @@ body[data-theme='red'] .footer-logo {
   }
 
   .services-grid,
+  .skills-grid,
   .process-grid,
   .process-grid-five,
   .included-grid,
@@ -2491,6 +2553,7 @@ body[data-theme='red'] .footer-logo {
   .project-card,
   .featured-project,
   .portfolio-card,
+  .about-preview-grid,
   .case-grid,
   .feature-grid,
   .process-grid,
@@ -2643,6 +2706,7 @@ body[data-theme='red'] .footer-logo {
   .portfolio-card-body,
   .service-card,
   .process-step,
+  .skill-card,
   .included-card,
   .trust-card,
   .beyond-code-copy,
