@@ -1,30 +1,30 @@
 :root {
   --brand-logo-url: url('assets/icons/kalyd-logo-default.png');
-  --bg: #08070d;
-  --bg-soft: #f7f7f2;
+  --bg: #090d0b;
+  --bg-soft: #f4fff8;
   --ink: #171916;
-  --text: #f8f5ec;
-  --muted: #c8c2d6;
+  --text: #f6fff9;
+  --muted: #b7c9bf;
   --muted-dark: #64675f;
-  --surface: #121018;
-  --line: rgba(248, 245, 236, 0.12);
+  --surface: #101611;
+  --line: rgba(246, 255, 249, 0.12);
   --line-dark: rgba(23, 25, 22, 0.13);
-  --accent: #a855f7;
-  --accent-2: #ffffff;
-  --accent-3: #7c3cff;
-  --header-bg: rgba(8, 7, 13, 0.78);
-  --header-menu-bg: rgba(8, 7, 13, 0.96);
+  --accent: #19e679;
+  --accent-2: #7dffb4;
+  --accent-3: #ffffff;
+  --header-bg: rgba(9, 13, 11, 0.8);
+  --header-menu-bg: rgba(9, 13, 11, 0.97);
   --nav-hover: rgba(255, 255, 255, 0.06);
   --control-bg: rgba(255, 255, 255, 0.08);
   --secondary-bg: rgba(255, 255, 255, 0.04);
   --card-bg: rgba(255, 255, 255, 0.045);
   --band-bg: color-mix(in srgb, var(--bg-soft) 92%, var(--accent) 8%);
-  --solid-card: #f8f5ec;
+  --solid-card: #f7fff9;
   --panel-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-  --body-edge: rgba(168, 85, 247, 0.18);
-  --body-grid: rgba(248, 245, 236, 0.035);
-  --body-grid-soft: rgba(248, 245, 236, 0.018);
-  --eyebrow-soft: #7c3cff;
+  --body-edge: rgba(25, 230, 121, 0.13);
+  --body-grid: rgba(246, 255, 249, 0.025);
+  --body-grid-soft: rgba(246, 255, 249, 0.012);
+  --eyebrow-soft: #10b981;
   --white: #ffffff;
   --radius: 8px;
   --radius-lg: 8px;
@@ -139,8 +139,8 @@ body {
   background:
     linear-gradient(90deg, var(--body-grid) 0 1px, transparent 1px),
     linear-gradient(180deg, var(--body-grid) 0 1px, transparent 1px),
-    linear-gradient(115deg, color-mix(in srgb, var(--accent) 13%, transparent), transparent 34%),
-    linear-gradient(245deg, color-mix(in srgb, var(--accent-2) 14%, transparent), transparent 38%),
+    radial-gradient(circle at 14% 18%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 34%),
+    radial-gradient(circle at 86% 12%, color-mix(in srgb, var(--accent-2) 10%, transparent), transparent 30%),
     var(--bg);
   background-size: 72px 72px, 72px 72px, auto, auto, auto;
   overflow-x: hidden;
@@ -153,7 +153,7 @@ body::before {
   z-index: -2;
   pointer-events: none;
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--accent) 16%, transparent), transparent 18%, transparent 82%, color-mix(in srgb, var(--accent-2) 14%, transparent)),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 18%, transparent 82%, color-mix(in srgb, var(--accent-2) 8%, transparent)),
     linear-gradient(90deg, var(--body-edge) 0 1px, transparent 1px calc(100% - 1px), var(--body-edge) calc(100% - 1px));
   width: min(100% - 32px, 1760px);
   margin-inline: auto;
@@ -168,7 +168,7 @@ body::after {
   z-index: -1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, var(--body-edge), transparent 20%, transparent 80%, var(--body-edge)),
+    linear-gradient(90deg, color-mix(in srgb, var(--body-edge) 70%, transparent), transparent 20%, transparent 80%, color-mix(in srgb, var(--body-edge) 70%, transparent)),
     repeating-linear-gradient(90deg, transparent 0 118px, var(--body-grid-soft) 118px 119px);
 }
 
@@ -246,6 +246,8 @@ body::after,
 .menu-toggle,
 .button,
 .hero-panel,
+.hero-profile-card,
+.hero-photo-frame,
 .preview-card,
 .preview-main::before,
 .preview-main::after,
@@ -440,7 +442,7 @@ body[data-theme='red'] .brand-mark {
 }
 
 .theme-dot-current {
-  background: linear-gradient(135deg, #08070d 0 48%, #a855f7 48% 76%, #ffffff 76% 100%);
+  background: linear-gradient(135deg, #090d0b 0 48%, #19e679 48% 76%, #ffffff 76% 100%);
 }
 
 .theme-dot-purple {
@@ -490,11 +492,11 @@ body[data-theme='red'] .brand-mark {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.68fr);
-  gap: 52px;
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.72fr);
+  gap: clamp(44px, 6vw, 92px);
   align-items: center;
-  min-height: 88vh;
-  padding: 112px 0 64px;
+  min-height: 86vh;
+  padding: 124px 0 72px;
 }
 
 .eyebrow {
@@ -510,8 +512,8 @@ body[data-theme='red'] .brand-mark {
 .section-heading h2,
 .contact-wrap h2 {
   max-width: 920px;
-  font-size: clamp(2.75rem, 5vw, 4.65rem);
-  line-height: 1;
+  font-size: clamp(2.7rem, 4.6vw, 4.35rem);
+  line-height: 1.04;
   font-weight: 800;
 }
 
@@ -571,6 +573,86 @@ body[data-theme='red'] .brand-mark {
   border-radius: var(--radius-lg);
   background: var(--panel-bg);
   box-shadow: var(--shadow);
+}
+
+.hero-profile-card {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  max-width: 520px;
+  justify-self: center;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035));
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.hero-profile-card::before {
+  content: '';
+  position: absolute;
+  inset: auto 18px 118px 18px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.55;
+}
+
+.hero-photo-frame {
+  position: relative;
+  aspect-ratio: 1 / 1.04;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  overflow: hidden;
+}
+
+.hero-photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent 48%, rgba(0, 0, 0, 0.36));
+  pointer-events: none;
+}
+
+.hero-photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.hero-profile-info {
+  position: relative;
+  z-index: 1;
+  padding: 4px 4px 2px;
+}
+
+.hero-profile-info span {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-profile-info strong {
+  display: block;
+  max-width: 360px;
+  color: var(--text);
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  line-height: 1.12;
+}
+
+.hero-profile-info p {
+  max-width: 390px;
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.65;
 }
 
 .about-photo-card {
@@ -1926,12 +2008,15 @@ body[data-theme='dark-purple'] .contact-form textarea {
 .site-footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
   width: min(1560px, calc(100% - 48px));
   margin-inline: auto;
-  padding: 30px 0;
+  margin-top: 8px;
+  padding: 26px 0 34px;
+  border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .site-footer span {
