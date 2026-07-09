@@ -291,10 +291,11 @@ main {
 
 .hero-title {
   max-width: min(1060px, 100%);
-  margin: 0;
-  overflow: hidden;
+  margin: 0 -0.04em;
+  padding: 0.04em;
+  overflow: visible;
   font-size: clamp(4.3rem, 12.6vw, 11.2rem);
-  line-height: 0.8;
+  line-height: 0.88;
   letter-spacing: -0.085em;
   text-transform: lowercase;
   text-wrap: balance;
