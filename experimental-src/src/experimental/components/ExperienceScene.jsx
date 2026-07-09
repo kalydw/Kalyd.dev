@@ -44,19 +44,19 @@ export default function ExperienceScene() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.position.z = 5.2;
 
-    const geometry = new THREE.IcosahedronGeometry(1.28, isLowPower ? 3 : 7);
+    const geometry = new THREE.IcosahedronGeometry(1.34, isLowPower ? 3 : 9);
     const basePositions = Float32Array.from(geometry.attributes.position.array);
     const material = new THREE.MeshBasicMaterial({
       color: 0x8b5cf6,
       wireframe: true,
       transparent: true,
-      opacity: isLowPower ? 0.32 : 0.5
+      opacity: isLowPower ? 0.34 : 0.58
     });
     const mesh = new THREE.Mesh(geometry, material);
     mesh.position.set(isLowPower ? 1.2 : 1.55, isLowPower ? 0 : 0.32, 0);
     scene.add(mesh);
 
-    const particleCount = isLowPower ? 28 : 90;
+    const particleCount = isLowPower ? 34 : 130;
     const particlesGeometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
 
@@ -71,7 +71,7 @@ export default function ExperienceScene() {
       color: 0xffffff,
       size: isLowPower ? 0.014 : 0.018,
       transparent: true,
-      opacity: isLowPower ? 0.24 : 0.42
+      opacity: isLowPower ? 0.26 : 0.5
     });
     const particles = new THREE.Points(particlesGeometry, particlesMaterial);
     scene.add(particles);
@@ -91,16 +91,16 @@ export default function ExperienceScene() {
       const baseX = isLowPower ? 1.2 : 1.55;
       const baseY = isLowPower ? 0 : 0.32;
 
-      mesh.rotation.x += isLowPower ? 0.0008 : 0.0018 + mouseY * 0.0008;
-      mesh.rotation.y += isLowPower ? 0.0011 : 0.0026 + mouseX * 0.001;
-      mesh.position.x += (baseX + mouseX * 0.28 - mesh.position.x) * 0.032;
-      mesh.position.y += (baseY - mouseY * 0.2 - mesh.position.y) * 0.032;
+      mesh.rotation.x += isLowPower ? 0.0008 : 0.0022 + mouseY * 0.001;
+      mesh.rotation.y += isLowPower ? 0.0011 : 0.003 + mouseX * 0.0012;
+      mesh.position.x += (baseX + mouseX * 0.34 - mesh.position.x) * 0.036;
+      mesh.position.y += (baseY - mouseY * 0.24 - mesh.position.y) * 0.036;
       particles.rotation.y -= isLowPower ? 0.00025 : 0.0005;
 
       frameCount += 1;
-      if (!isLowPower && frameCount % 4 === 0) {
+      if (!isLowPower && frameCount % 3 === 0) {
         const position = geometry.attributes.position;
-        const intensity = state.hoveredProject || state.hoveredWord ? 0.055 : 0.022;
+        const intensity = state.hoveredProject || state.hoveredWord ? 0.07 : 0.028;
 
         for (let i = 0; i < position.count; i += 1) {
           const ix = i * 3;

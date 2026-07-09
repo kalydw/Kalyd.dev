@@ -1,43 +1,66 @@
-﻿export const projects = [
+export const projects = [
   {
-    id: 'fmedchoices',
-    name: 'FMEDCHOICES',
-    type: 'Web App',
+    title: 'FMEDCHOICES',
+    slug: 'fmedchoices',
+    type: 'Web App / Plataforma',
     year: '2026',
-    image: '/assets/images/projects/fmedchoices/desktop.png',
-    url: '../projeto.html',
+    featured: true,
+    cover: '/assets/images/projects/fmedchoices/desktop.png',
+    url: '/projeto?id=fmedchoices',
     accent: '#8b5cf6',
-    description: 'Plataforma de estudos para medicina, com landing page e área interna.'
+    summary: 'Plataforma de estudos para medicina, com landing page, dashboard e módulos de estudo.',
+    tags: ['Medicina', 'Dashboard', 'Web App'],
+    modules: ['Landing page comercial', 'Dashboard do estudante', 'Choices', 'Pomodoro', 'Flashcards']
   },
   {
-    id: 'imoveis-jota',
-    name: 'Imóveis Jota',
-    type: 'Website',
+    title: 'Imóveis Jota',
+    slug: 'imoveis-jota',
+    type: 'Website / Catálogo',
     year: '2026',
-    image: '/assets/images/projects/imoveis-jota/desktop.png',
-    url: '../portfolio.html',
+    featured: true,
+    cover: '/assets/images/projects/imoveis-jota/desktop.png',
+    url: '/projeto?id=imoveis-jota',
     accent: '#c4b5fd',
-    description: 'Site imobiliário com foco em apresentação, clareza e contato.'
+    summary: 'Site imobiliário com catálogo digital, apresentação de imóveis e contato.',
+    tags: ['Imobiliária', 'Catálogo', 'Website'],
+    modules: ['Site institucional', 'Catálogo de imóveis', 'Contato via WhatsApp']
   },
   {
-    id: 'kalyd-dev',
-    name: 'Kalyd.dev',
-    type: 'Portfolio',
+    title: 'Kalyd.dev',
+    slug: 'kalyd-dev',
+    type: 'Portfólio / Identidade',
     year: '2026',
-    image: '/assets/images/kalyd-photo.png',
-    url: '../',
+    featured: true,
+    cover: '/assets/images/kalyd-photo.png',
+    url: '/',
     accent: '#ffffff',
-    description: 'Identidade digital pessoal com temas, animações e páginas de projeto.'
+    summary: 'Identidade digital pessoal com temas, páginas de apresentação e experiência experimental.',
+    tags: ['Portfólio', 'Design System', 'Animação'],
+    modules: ['Página principal', 'Sobre mim', 'Evolução visual', 'Lab 3D']
   },
   {
-    id: 'catalogo-digital',
-    name: 'Catálogo Digital',
-    type: 'Web System',
+    title: 'Página de evolução',
+    slug: 'evolucao-visual',
+    type: 'Storytelling visual',
     year: '2026',
-    image: '/assets/images/projects/imoveis-jota/mobile.png',
-    url: '../portfolio.html',
+    featured: false,
+    url: '/evolucao',
     accent: '#a78bfa',
-    description: 'Conceito para catálogo responsivo com navegação simples e rápida.'
+    summary: 'Página comparando versões do portfólio com narrativa visual e troca de estados.',
+    tags: ['Storytelling', 'Interação', 'Portfólio'],
+    modules: ['Antes e depois', 'Transições', 'Comparação visual']
+  },
+  {
+    title: 'Sistema de temas',
+    slug: 'sistema-de-temas',
+    type: 'Interface / Identidade',
+    year: '2026',
+    featured: false,
+    url: '/',
+    accent: '#7c3aed',
+    summary: 'Troca de temas com identidade visual própria para diferentes atmosferas do portfólio.',
+    tags: ['Temas', 'UI', 'Identidade'],
+    modules: ['Tema padrão', 'Tema roxo', 'Tema claro', 'Tema dark purple']
   }
 ];
 

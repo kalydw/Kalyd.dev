@@ -10,8 +10,23 @@ export default function ProjectPreview() {
   const positionRef = useRef({ x: pointer.x, y: pointer.y });
   const hoveredProject = useExperienceStore((state) => state.hoveredProject);
 
+  const getSafePosition = () => {
+    const width = 340;
+    const height = 245;
+    const x = Math.min(Math.max(pointer.x + 28, 18), window.innerWidth - width - 18);
+    const y = Math.min(Math.max(pointer.y - 92, 18), window.innerHeight - height - 18);
+
+    return { x, y };
+  };
+
   useEffect(() => {
     if (!previewRef.current) return;
+
+    if (hoveredProject && !getIsLowPower()) {
+      const next = getSafePosition();
+      positionRef.current = next;
+      previewRef.current.style.transform = `translate3d(${next.x}px, ${next.y}px, 0)`;
+    }
 
     gsap.to(previewRef.current, {
       autoAlpha: hoveredProject ? 1 : 0,
@@ -27,8 +42,9 @@ export default function ProjectPreview() {
     const unsubscribeFrame = subscribeFrame(() => {
       if (!previewRef.current) return;
 
-      positionRef.current.x += (pointer.x + 26 - positionRef.current.x) * 0.16;
-      positionRef.current.y += (pointer.y - 90 - positionRef.current.y) * 0.16;
+      const next = getSafePosition();
+      positionRef.current.x += (next.x - positionRef.current.x) * 0.16;
+      positionRef.current.y += (next.y - positionRef.current.y) * 0.16;
       previewRef.current.style.transform = `translate3d(${positionRef.current.x}px, ${positionRef.current.y}px, 0)`;
     });
 
@@ -39,10 +55,10 @@ export default function ProjectPreview() {
     <aside className="floating-preview" ref={previewRef} aria-hidden="true">
       {hoveredProject && (
         <>
-          <img src={hoveredProject.image} alt="" loading="lazy" decoding="async" />
+          <img src={hoveredProject.cover} alt="" loading="lazy" decoding="async" />
           <div>
-            <strong>{hoveredProject.name}</strong>
-            <p>{hoveredProject.description}</p>
+            <strong>{hoveredProject.title}</strong>
+            <p>{hoveredProject.summary}</p>
           </div>
         </>
       )}

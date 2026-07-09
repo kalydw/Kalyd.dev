@@ -1,6 +1,10 @@
-﻿import { projects } from '../data.js';
+import { projects } from '../data.js';
 import { useExperienceStore } from '../store/experienceStore.js';
+import { pointer } from '../utils/pointer.js';
 import ProjectPreview from './ProjectPreview.jsx';
+
+const featuredProjects = projects.filter((project) => project.featured).slice(0, 5);
+const archiveProjects = projects.filter((project) => !project.featured);
 
 export default function ProjectExperienceList() {
   const hoveredProject = useExperienceStore((state) => state.hoveredProject);
@@ -9,43 +13,56 @@ export default function ProjectExperienceList() {
   const setBackgroundMode = useExperienceStore((state) => state.setBackgroundMode);
   const resetInteraction = useExperienceStore((state) => state.resetInteraction);
 
-  const handleEnter = (project) => {
+  const handleEnter = (project, event) => {
+    pointer.x = event.clientX || pointer.x;
+    pointer.y = event.clientY || pointer.y;
     setHoveredProject(project);
     setCursorMode('project');
-    setBackgroundMode(project.id);
+    setBackgroundMode(project.slug);
+  };
+
+  const handleLeave = () => {
+    resetInteraction();
   };
 
   return (
     <section className="work section" id="work" aria-labelledby="work-title">
       <div className="section-heading" data-reveal>
         <div>
-          <p className="section-kicker">Projetos selecionados</p>
+          <p className="section-kicker">Projetos em destaque</p>
           <h2 id="work-title">Projetos que mostram direção, produto e acabamento.</h2>
         </div>
         <p>
-          Passe pelos projetos para ver a página reagir. A ideia é transformar o portfólio em uma experiência viva, sem perder clareza.
+          Os principais trabalhos ficam em destaque com o Project Portal. Projetos menores entram no arquivo, mantendo a página forte e preparada para crescer.
         </p>
       </div>
 
       <div className="work-stage">
         <p className="project-ghost" aria-hidden="true">
-          {hoveredProject?.name || 'Kalyd.dev'}
+          {hoveredProject?.title || 'Kalyd.dev'}
         </p>
 
         <div className="work-list" data-reveal>
-          {projects.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <a
-              className={`work-item ${hoveredProject && hoveredProject.id !== project.id ? 'is-muted' : ''}`}
+              className={`work-item ${hoveredProject && hoveredProject.slug !== project.slug ? 'is-muted' : ''}`}
               href={project.url}
-              key={project.id}
+              key={project.slug}
               data-cursor="project"
-              onMouseEnter={() => handleEnter(project)}
-              onFocus={() => handleEnter(project)}
-              onMouseLeave={resetInteraction}
-              onBlur={resetInteraction}
+              onMouseEnter={(event) => handleEnter(project, event)}
+              onFocus={(event) => handleEnter(project, event)}
+              onMouseLeave={handleLeave}
+              onBlur={handleLeave}
             >
               <span>{String(index + 1).padStart(2, '0')}</span>
-              <h3>{project.name}</h3>
+              <div>
+                <h3>{project.title}</h3>
+                <ul className="work-modules" aria-label={`Módulos de ${project.title}`}>
+                  {project.modules.slice(0, 3).map((module) => (
+                    <li key={module}>{module}</li>
+                  ))}
+                </ul>
+              </div>
               <p>{project.type}</p>
               <strong>{project.year}</strong>
             </a>
@@ -53,6 +70,30 @@ export default function ProjectExperienceList() {
         </div>
         <ProjectPreview />
       </div>
+
+      {archiveProjects.length > 0 && (
+        <div className="project-archive" data-reveal>
+          <div className="archive-heading">
+            <p className="section-kicker">Arquivo de projetos</p>
+            <h3>Outros trabalhos e módulos do portfólio.</h3>
+          </div>
+
+          <div className="archive-grid">
+            {archiveProjects.map((project) => (
+              <a className="archive-card" href={project.url} key={project.slug} data-cursor="link">
+                <span>{project.year}</span>
+                <h4>{project.title}</h4>
+                <p>{project.summary}</p>
+                <div className="archive-tags">
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <small key={tag}>{tag}</small>
+                  ))}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

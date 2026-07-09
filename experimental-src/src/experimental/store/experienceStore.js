@@ -11,7 +11,7 @@ const initialState = {
 export const useExperienceStore = create((set, get) => ({
   ...initialState,
   setHoveredProject: (hoveredProject) => {
-    if (get().hoveredProject?.id !== hoveredProject?.id) set({ hoveredProject });
+    if (get().hoveredProject?.slug !== hoveredProject?.slug) set({ hoveredProject });
   },
   setHoveredWord: (hoveredWord) => {
     if (get().hoveredWord !== hoveredWord) set({ hoveredWord });
