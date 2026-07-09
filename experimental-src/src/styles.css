@@ -290,13 +290,14 @@ main {
 }
 
 .hero-title {
-  max-width: 1060px;
+  max-width: min(1060px, 100%);
   margin: 0;
   overflow: hidden;
-  font-size: clamp(4.3rem, 13.8vw, 12rem);
+  font-size: clamp(4.3rem, 12.6vw, 11.2rem);
   line-height: 0.8;
-  letter-spacing: -0.095em;
+  letter-spacing: -0.085em;
   text-transform: lowercase;
+  text-wrap: balance;
 }
 
 .hero-title .word,
@@ -717,8 +718,8 @@ main {
 
   .hero-title {
     max-width: 100%;
-    font-size: clamp(4.2rem, 20vw, 7.6rem);
-    letter-spacing: -0.08em;
+    font-size: clamp(3.9rem, 18vw, 7rem);
+    letter-spacing: -0.07em;
     overflow-wrap: anywhere;
   }
 
@@ -779,7 +780,7 @@ main {
   }
 
   .hero-title {
-    font-size: clamp(3.82rem, 19vw, 5.9rem);
+    font-size: clamp(3.4rem, 17vw, 5.2rem);
   }
 
   .section-heading h2,
