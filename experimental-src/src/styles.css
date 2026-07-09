@@ -684,6 +684,7 @@ main {
   left: 0;
   z-index: 26;
   width: min(340px, 27vw);
+  min-width: 260px;
   border: 1px solid color-mix(in srgb, var(--preview-accent, var(--purple)) 42%, var(--line));
   border-radius: 18px;
   background:
@@ -695,7 +696,14 @@ main {
   pointer-events: none;
   visibility: hidden;
   backdrop-filter: blur(14px);
-  will-change: transform, opacity;
+  transform: translate3d(var(--project-preview-x, -120vw), var(--project-preview-y, -120vh), 0);
+  transition: opacity 180ms ease, visibility 180ms ease, border-color 240ms ease, background 240ms ease;
+  will-change: transform;
+}
+
+.has-project-preview-position .floating-preview.is-visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .floating-preview::before {
@@ -707,6 +715,11 @@ main {
   pointer-events: none;
 }
 
+.floating-preview-frame {
+  overflow: hidden;
+  border-radius: inherit;
+}
+
 .floating-preview img {
   display: block;
   width: 100%;
@@ -714,7 +727,7 @@ main {
   object-fit: cover;
 }
 
-.floating-preview div {
+.floating-preview-copy {
   padding: 15px;
 }
 

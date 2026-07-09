@@ -8,8 +8,8 @@
       </p>
       <div className="contact-links">
         <a href="https://wa.me/5588992140332" data-cursor="whatsapp" target="_blank" rel="noreferrer">Pedir orçamento pelo WhatsApp</a>
-        <a href="../#portfolio" data-cursor="link">Projetos</a>
-        <a href="../" data-cursor="link">Site principal</a>
+        <a href="/#portfolio" data-cursor="link">Projetos</a>
+        <a href="/" data-cursor="link">Site principal</a>
       </div>
     </section>
   );

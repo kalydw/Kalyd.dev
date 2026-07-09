@@ -2,6 +2,7 @@ import { projects } from '../data.js';
 import { useExperienceStore } from '../store/experienceStore.js';
 import { getIsLowPower } from '../utils/performance.js';
 import { pointer } from '../utils/pointer.js';
+import { setPreviewPosition } from '../utils/previewPosition.js';
 import ProjectPreview from './ProjectPreview.jsx';
 
 const featuredProjects = projects.filter((project) => project.featured).slice(0, 5);
@@ -15,8 +16,9 @@ export default function ProjectExperienceList() {
   const resetInteraction = useExperienceStore((state) => state.resetInteraction);
 
   const handleEnter = (project, event) => {
-    pointer.x = event.clientX || pointer.x;
-    pointer.y = event.clientY || pointer.y;
+    pointer.x = event.clientX ?? pointer.x;
+    pointer.y = event.clientY ?? pointer.y;
+    setPreviewPosition(pointer.x, pointer.y, { immediate: true });
     setHoveredProject(project);
     setCursorMode('project');
     setBackgroundMode(project.slug);
@@ -57,7 +59,11 @@ export default function ProjectExperienceList() {
         </p>
       </div>
 
-      <div className={`work-stage ${hoveredProject ? 'is-portal-open' : ''}`} style={{ '--project-accent': hoveredProject?.accent || '#8b5cf6' }}>
+      <div
+        className={`work-stage ${hoveredProject ? 'is-portal-open' : ''}`}
+        style={{ '--project-accent': hoveredProject?.accent || '#8b5cf6' }}
+        onMouseLeave={handleLeave}
+      >
         <p className="project-ghost" aria-hidden="true">
           {hoveredProject?.title || 'Kalyd.dev'}
         </p>
@@ -71,7 +77,6 @@ export default function ProjectExperienceList() {
               data-cursor="project"
               onMouseEnter={(event) => handleEnter(project, event)}
               onFocus={(event) => handleEnter(project, event)}
-              onMouseLeave={handleLeave}
               onBlur={handleLeave}
               onClick={(event) => handleClick(project, event)}
             >

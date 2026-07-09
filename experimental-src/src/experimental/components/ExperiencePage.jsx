@@ -25,6 +25,7 @@ export default function ExperiencePage() {
   const hoveredWord = useExperienceStore((state) => state.hoveredWord);
   const activeSection = useExperienceStore((state) => state.activeSection);
   const backgroundMode = useExperienceStore((state) => state.backgroundMode);
+  const resetInteraction = useExperienceStore((state) => state.resetInteraction);
 
   useLenis();
   useMousePosition();
@@ -47,6 +48,18 @@ export default function ExperiencePage() {
     const timer = window.setTimeout(() => setIsLoading(false), 760);
     return () => window.clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    const clearPortalNavigation = () => {
+      document.documentElement.classList.remove('portal-navigating');
+      resetInteraction();
+    };
+
+    window.addEventListener('pageshow', clearPortalNavigation);
+    clearPortalNavigation();
+
+    return () => window.removeEventListener('pageshow', clearPortalNavigation);
+  }, [resetInteraction]);
 
   useGSAP(() => {
     const isLowPower = getIsLowPower();
@@ -87,7 +100,7 @@ export default function ExperiencePage() {
       <CustomCursor />
 
       <header className="exp-header" data-reveal>
-        <a className="exp-brand" href="../" data-cursor="link" aria-label="Voltar para Kalyd.dev">
+        <a className="exp-brand" href="/" data-cursor="link" aria-label="Voltar para Kalyd.dev">
           <span>k.</span>
           Kalyd.dev
         </a>
@@ -95,7 +108,7 @@ export default function ExperiencePage() {
           <a className={activeSection === 'manifesto' ? 'is-active' : ''} href="#manifesto" data-cursor="link">Manifesto</a>
           <a className={activeSection === 'work' ? 'is-active' : ''} href="#work" data-cursor="link">Projetos</a>
           <a className={activeSection === 'skills' ? 'is-active' : ''} href="#skills" data-cursor="link">Habilidades</a>
-          <a href="../" data-cursor="link">Site principal</a>
+          <a href="/" data-cursor="link">Site principal</a>
         </nav>
       </header>
 
