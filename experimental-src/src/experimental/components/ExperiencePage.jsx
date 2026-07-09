@@ -13,6 +13,7 @@ import ManifestoSection from './ManifestoSection.jsx';
 import ProjectExperienceList from './ProjectExperienceList.jsx';
 import SkillsCloud from './SkillsCloud.jsx';
 import ContactExperience from './ContactExperience.jsx';
+import { getIsLowPower } from '../utils/performance.js';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -46,13 +47,14 @@ export default function ExperiencePage() {
   }, []);
 
   useGSAP(() => {
+    const isLowPower = getIsLowPower();
     const items = gsap.utils.toArray('[data-reveal]');
 
     items.forEach((item) => {
       gsap.from(item, {
         autoAlpha: 0,
-        y: 34,
-        duration: 0.9,
+        y: isLowPower ? 12 : 34,
+        duration: isLowPower ? 0.32 : 0.9,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: item,

@@ -1,18 +1,19 @@
-﻿import { useEffect } from 'react';
-import gsap from 'gsap';
+import { useEffect } from 'react';
 import Lenis from 'lenis';
+import { getIsLowPower } from '../utils/performance.js';
+import { subscribeFrame } from '../utils/rafBus.js';
 
 export function useLenis() {
   useEffect(() => {
+    if (getIsLowPower()) return undefined;
+
     const lenis = new Lenis({
       lerp: 0.08,
       wheelMultiplier: 0.9,
       smoothWheel: true
     });
 
-    const tick = (time) => lenis.raf(time * 1000);
-    gsap.ticker.add(tick);
-    gsap.ticker.lagSmoothing(0);
+    const unsubscribeFrame = subscribeFrame((time) => lenis.raf(time));
 
     const scrollToHash = (hash) => {
       const target = hash ? document.querySelector(hash) : null;
@@ -36,7 +37,7 @@ export function useLenis() {
 
     return () => {
       document.removeEventListener('click', handleAnchorClick);
-      gsap.ticker.remove(tick);
+      unsubscribeFrame();
       lenis.destroy();
     };
   }, []);

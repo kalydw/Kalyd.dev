@@ -1,6 +1,8 @@
-﻿import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
 import { useExperienceStore } from '../store/experienceStore.js';
+import { getIsLowPower } from '../utils/performance.js';
+import { pointer } from '../utils/pointer.js';
+import { subscribeFrame } from '../utils/rafBus.js';
 
 const labels = {
   default: '',
@@ -12,18 +14,25 @@ const labels = {
 
 export default function CustomCursor() {
   const cursorRef = useRef(null);
-  const labelRef = useRef(null);
   const cursorMode = useExperienceStore((state) => state.cursorMode);
-  const mousePosition = useExperienceStore((state) => state.mousePosition);
   const setCursorMode = useExperienceStore((state) => state.setCursorMode);
 
   useEffect(() => {
-    const isSmallScreen = window.matchMedia('(max-width: 760px)').matches;
-    const hasReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (isSmallScreen || hasReducedMotion) {
+    if (getIsLowPower()) {
       setCursorMode('hidden');
       return undefined;
     }
+
+    let currentX = pointer.x;
+    let currentY = pointer.y;
+
+    const unsubscribeFrame = subscribeFrame(() => {
+      if (!cursorRef.current) return;
+
+      currentX += (pointer.x - currentX) * 0.22;
+      currentY += (pointer.y - currentY) * 0.22;
+      cursorRef.current.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate3d(-50%, -50%, 0)`;
+    });
 
     const handleOver = (event) => {
       const target = event.target.closest('[data-cursor], a, button');
@@ -34,6 +43,7 @@ export default function CustomCursor() {
     const handleOut = (event) => {
       const target = event.target.closest('[data-cursor], a, button');
       if (!target) return;
+      if (event.relatedTarget && target.contains(event.relatedTarget)) return;
       setCursorMode('default');
     };
 
@@ -41,25 +51,15 @@ export default function CustomCursor() {
     document.addEventListener('pointerout', handleOut);
 
     return () => {
+      unsubscribeFrame();
       document.removeEventListener('pointerover', handleOver);
       document.removeEventListener('pointerout', handleOut);
     };
   }, [setCursorMode]);
 
-  useEffect(() => {
-    if (!cursorRef.current) return;
-
-    gsap.to(cursorRef.current, {
-      x: mousePosition.x,
-      y: mousePosition.y,
-      duration: 0.18,
-      ease: 'power2.out'
-    });
-  }, [mousePosition]);
-
   return (
     <span className={`cursor-dot cursor-${cursorMode}`} ref={cursorRef} aria-hidden="true">
-      <span ref={labelRef}>{labels[cursorMode]}</span>
+      <span>{labels[cursorMode]}</span>
     </span>
   );
 }

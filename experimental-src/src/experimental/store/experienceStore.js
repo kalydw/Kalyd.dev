@@ -5,18 +5,26 @@ const initialState = {
   hoveredWord: null,
   cursorMode: 'default',
   activeSection: 'home',
-  backgroundMode: 'idle',
-  mousePosition: { x: 0, y: 0 }
+  backgroundMode: 'idle'
 };
 
-export const useExperienceStore = create((set) => ({
+export const useExperienceStore = create((set, get) => ({
   ...initialState,
-  setHoveredProject: (hoveredProject) => set({ hoveredProject }),
-  setHoveredWord: (hoveredWord) => set({ hoveredWord }),
-  setCursorMode: (cursorMode) => set({ cursorMode }),
-  setActiveSection: (activeSection) => set({ activeSection }),
-  setBackgroundMode: (backgroundMode) => set({ backgroundMode }),
-  setMousePosition: (mousePosition) => set({ mousePosition }),
+  setHoveredProject: (hoveredProject) => {
+    if (get().hoveredProject?.id !== hoveredProject?.id) set({ hoveredProject });
+  },
+  setHoveredWord: (hoveredWord) => {
+    if (get().hoveredWord !== hoveredWord) set({ hoveredWord });
+  },
+  setCursorMode: (cursorMode) => {
+    if (get().cursorMode !== cursorMode) set({ cursorMode });
+  },
+  setActiveSection: (activeSection) => {
+    if (get().activeSection !== activeSection) set({ activeSection });
+  },
+  setBackgroundMode: (backgroundMode) => {
+    if (get().backgroundMode !== backgroundMode) set({ backgroundMode });
+  },
   resetInteraction: () =>
     set({
       hoveredProject: null,

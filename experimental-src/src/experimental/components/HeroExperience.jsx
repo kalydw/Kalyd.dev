@@ -3,12 +3,26 @@ import gsap from 'gsap';
 import SplitType from 'split-type';
 import { useGSAP } from '@gsap/react';
 import InteractiveWord from './InteractiveWord.jsx';
+import { getIsLowPower } from '../utils/performance.js';
 
 export default function HeroExperience() {
   const titleRef = useRef(null);
 
   useGSAP(() => {
     if (!titleRef.current) return undefined;
+    const isLowPower = getIsLowPower();
+
+    if (isLowPower) {
+      gsap.from(titleRef.current, {
+        autoAlpha: 0,
+        y: 16,
+        duration: 0.42,
+        ease: 'power2.out',
+        delay: 0.16
+      });
+
+      return undefined;
+    }
 
     const split = new SplitType(titleRef.current, { types: 'chars,words' });
 

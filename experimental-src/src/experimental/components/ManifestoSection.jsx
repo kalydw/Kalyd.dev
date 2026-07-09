@@ -2,6 +2,7 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { getIsLowPower } from '../utils/performance.js';
 
 const lines = [
   'Não faço apenas páginas.',
@@ -19,13 +20,14 @@ export default function ManifestoSection() {
   const sectionRef = useRef(null);
 
   useGSAP(() => {
+    const isLowPower = getIsLowPower();
     const spans = gsap.utils.toArray('.manifesto-line span');
 
     gsap.from(spans, {
-      yPercent: 115,
+      yPercent: isLowPower ? 28 : 115,
       autoAlpha: 0,
-      duration: 0.9,
-      stagger: 0.11,
+      duration: isLowPower ? 0.42 : 0.9,
+      stagger: isLowPower ? 0.04 : 0.11,
       ease: 'power4.out',
       scrollTrigger: {
         trigger: sectionRef.current,
