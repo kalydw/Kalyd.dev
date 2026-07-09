@@ -1,5 +1,6 @@
 import { projects } from '../data.js';
 import { useExperienceStore } from '../store/experienceStore.js';
+import { getIsLowPower } from '../utils/performance.js';
 import { pointer } from '../utils/pointer.js';
 import ProjectPreview from './ProjectPreview.jsx';
 
@@ -25,6 +26,25 @@ export default function ProjectExperienceList() {
     resetInteraction();
   };
 
+  const handleClick = (project, event) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+    if (!project.url) {
+      event.preventDefault();
+      return;
+    }
+
+    event.preventDefault();
+    setHoveredProject(project);
+    setCursorMode('hidden');
+    setBackgroundMode(project.slug);
+
+    document.documentElement.classList.add('portal-navigating');
+
+    window.setTimeout(() => {
+      window.location.href = project.url;
+    }, getIsLowPower() ? 80 : 420);
+  };
+
   return (
     <section className="work section" id="work" aria-labelledby="work-title">
       <div className="section-heading" data-reveal>
@@ -37,7 +57,7 @@ export default function ProjectExperienceList() {
         </p>
       </div>
 
-      <div className="work-stage">
+      <div className={`work-stage ${hoveredProject ? 'is-portal-open' : ''}`} style={{ '--project-accent': hoveredProject?.accent || '#8b5cf6' }}>
         <p className="project-ghost" aria-hidden="true">
           {hoveredProject?.title || 'Kalyd.dev'}
         </p>
@@ -45,7 +65,7 @@ export default function ProjectExperienceList() {
         <div className="work-list" data-reveal>
           {featuredProjects.map((project, index) => (
             <a
-              className={`work-item ${hoveredProject && hoveredProject.slug !== project.slug ? 'is-muted' : ''}`}
+              className={`work-item ${hoveredProject?.slug === project.slug ? 'is-active' : ''} ${hoveredProject && hoveredProject.slug !== project.slug ? 'is-muted' : ''}`}
               href={project.url}
               key={project.slug}
               data-cursor="project"
@@ -53,6 +73,7 @@ export default function ProjectExperienceList() {
               onFocus={(event) => handleEnter(project, event)}
               onMouseLeave={handleLeave}
               onBlur={handleLeave}
+              onClick={(event) => handleClick(project, event)}
             >
               <span>{String(index + 1).padStart(2, '0')}</span>
               <div>

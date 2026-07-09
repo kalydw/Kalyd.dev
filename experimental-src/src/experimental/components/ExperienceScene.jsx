@@ -95,7 +95,13 @@ export default function ExperienceScene() {
       mesh.rotation.y += isLowPower ? 0.0011 : 0.003 + mouseX * 0.0012;
       mesh.position.x += (baseX + mouseX * 0.34 - mesh.position.x) * 0.036;
       mesh.position.y += (baseY - mouseY * 0.24 - mesh.position.y) * 0.036;
-      particles.rotation.y -= isLowPower ? 0.00025 : 0.0005;
+      const targetScale = state.hoveredProject ? 1.16 : state.hoveredWord ? 1.07 : 1;
+      const targetOpacity = state.hoveredProject ? 0.68 : state.hoveredWord ? 0.6 : isLowPower ? 0.34 : 0.54;
+      mesh.scale.x += (targetScale - mesh.scale.x) * 0.035;
+      mesh.scale.y += (targetScale - mesh.scale.y) * 0.035;
+      mesh.scale.z += (targetScale - mesh.scale.z) * 0.035;
+      material.opacity += (targetOpacity - material.opacity) * 0.04;
+      particles.rotation.y -= isLowPower ? 0.00025 : state.hoveredProject ? 0.0009 : 0.0005;
 
       frameCount += 1;
       if (!isLowPower && frameCount % 3 === 0) {

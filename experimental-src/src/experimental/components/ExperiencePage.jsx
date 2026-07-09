@@ -31,6 +31,8 @@ export default function ExperiencePage() {
   useScrollProgress();
 
   const backdropAccent = hoveredProject?.accent || (hoveredWord ? '#f8f7ff' : '#8b5cf6');
+  const portalAccent = hoveredProject?.accent || (hoveredWord ? '#a855f7' : '#8b5cf6');
+  const portalLabel = hoveredProject?.title || hoveredWord || '';
   const backdropClass = useMemo(() => {
     const normalized = String(backgroundMode || 'idle')
       .normalize('NFD')
@@ -73,6 +75,13 @@ export default function ExperiencePage() {
       </div>
 
       <div className={backdropClass} style={{ '--mode-accent': backdropAccent }} aria-hidden="true" />
+      <div
+        className={`project-portal-bg ${hoveredProject ? 'is-active' : ''} ${hoveredWord ? 'is-word-active' : ''}`}
+        style={{ '--portal-accent': portalAccent }}
+        aria-hidden="true"
+      >
+        <span>{portalLabel}</span>
+      </div>
       <div className="scroll-progress" aria-hidden="true" />
       <ExperienceScene />
       <CustomCursor />

@@ -4,18 +4,28 @@ export default function InteractiveWord({ word }) {
   const setHoveredWord = useExperienceStore((state) => state.setHoveredWord);
   const setBackgroundMode = useExperienceStore((state) => state.setBackgroundMode);
   const setCursorMode = useExperienceStore((state) => state.setCursorMode);
-  const resetInteraction = useExperienceStore((state) => state.resetInteraction);
+
+  const handleEnter = () => {
+    setHoveredWord(word);
+    setBackgroundMode(word);
+    setCursorMode('link');
+  };
+
+  const handleLeave = () => {
+    setHoveredWord(null);
+    setBackgroundMode('idle');
+    setCursorMode('default');
+  };
 
   return (
     <span
       className="interactive-word"
       data-cursor="link"
-      onMouseEnter={() => {
-        setHoveredWord(word);
-        setBackgroundMode(word);
-        setCursorMode('link');
-      }}
-      onMouseLeave={resetInteraction}
+      onMouseEnter={handleEnter}
+      onFocus={handleEnter}
+      onMouseLeave={handleLeave}
+      onBlur={handleLeave}
+      tabIndex="0"
     >
       {word}
     </span>

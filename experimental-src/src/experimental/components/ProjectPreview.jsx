@@ -52,7 +52,12 @@ export default function ProjectPreview() {
   }, [hoveredProject]);
 
   return (
-    <aside className="floating-preview" ref={previewRef} aria-hidden="true">
+    <aside
+      className="floating-preview"
+      ref={previewRef}
+      style={{ '--preview-accent': hoveredProject?.accent || '#8b5cf6' }}
+      aria-hidden="true"
+    >
       {hoveredProject && (
         <>
           <img src={hoveredProject.cover} alt="" loading="lazy" decoding="async" />
