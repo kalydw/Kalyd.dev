@@ -17,11 +17,12 @@ const revealRenderedCards = (container) => {
 
 const createProjectVisual = (project) => {
   const image = project.coverImage || project.image;
+  const fallbackImage = project.fallbackImage || 'assets/images/kalyd-photo.png';
 
   if (image) {
     return `
       <div class="project-card-visual project-screenshot">
-        <img src="${image}" alt="${project.imageAlt}" loading="lazy" />
+        <img src="${image}" alt="${project.imageAlt}" loading="lazy" onerror="this.onerror=null;this.src='${fallbackImage}'" />
       </div>
     `;
   }

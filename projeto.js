@@ -45,10 +45,11 @@ if (!project) {
 
   const visual = document.querySelector('[data-project-visual]');
   const coverImage = project.coverImage || project.image;
+  const fallbackImage = project.fallbackImage || 'assets/images/kalyd-photo.png';
 
   if (visual) {
     visual.innerHTML = coverImage
-      ? `<img src="${coverImage}" alt="${project.imageAlt}" />`
+      ? `<img src="${coverImage}" alt="${project.imageAlt}" onerror="this.onerror=null;this.src='${fallbackImage}'" />`
       : `
         <div class="project-fallback">
           <div class="fallback-browser"><span></span><span></span><span></span></div>
