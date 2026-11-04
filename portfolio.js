@@ -132,7 +132,9 @@ const openProjectModal = (projectId) => {
   modal.querySelector('[data-project-modal-description]').textContent = project.shortDescription || project.description;
   modal.querySelector('[data-project-modal-tags]').innerHTML = project.tags.map((tag) => `<span>${tag}</span>`).join('');
   modal.querySelector('[data-project-modal-link]').href = `projeto.html?id=${project.id}`;
-  modal.querySelector('[data-project-modal-external]').href = project.onlineUrl || project.link;
+  const externalLink = modal.querySelector('[data-project-modal-external]');
+  externalLink.href = project.onlineUrl || project.link || project.repositoryUrl;
+  externalLink.textContent = project.onlineUrl || project.link ? 'Ver online' : 'Ver repositório';
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
   modal.querySelector('[data-project-modal-close]')?.focus();

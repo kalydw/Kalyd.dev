@@ -39,7 +39,8 @@ if (!project) {
 
   const externalLink = document.querySelector('[data-project-external]');
   if (externalLink) {
-    externalLink.href = project.onlineUrl || project.link;
+    externalLink.href = project.onlineUrl || project.link || project.repositoryUrl;
+    externalLink.textContent = project.onlineUrl || project.link ? 'Ver projeto online' : 'Ver repositório';
   }
 
   const visual = document.querySelector('[data-project-visual]');
